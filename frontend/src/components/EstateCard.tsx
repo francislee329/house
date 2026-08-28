@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Estate } from "@/lib/api";
-import { formatPricePerSqft, scoreBg } from "@/lib/utils";
+import { formatPricePerSqft } from "@/lib/utils";
 
 interface Props {
   estate: Estate;
@@ -14,12 +14,9 @@ export default function EstateCard({ estate }: Props) {
     2: { color: "from-purple-600 to-purple-800", emoji: "🌇" },
     3: { color: "from-emerald-600 to-emerald-800", emoji: "🌳" },
     4: { color: "from-amber-600 to-amber-800", emoji: "🏔️" },
-    5: { color: "from-pink-600 to-pink-800", emoji: "🏠" },
-    6: { color: "from-cyan-600 to-cyan-800", emoji: "🌊" },
-    7: { color: "from-indigo-600 to-indigo-800", emoji: "🏢" },
-    8: { color: "from-teal-600 to-teal-800", emoji: "🏖️" },
+    100: { color: "from-red-600 to-orange-600", emoji: "🐉" },
   };
-  const m = meta[estate.id] || meta[1];
+  const m = meta[estate.id] || { color: "from-zinc-600 to-zinc-800", emoji: "🏠" };
 
   return (
     <Link href={`/estate/${estate.id}`}>
@@ -27,7 +24,14 @@ export default function EstateCard({ estate }: Props) {
         <div className={`absolute inset-x-0 top-0 h-1 rounded-t-xl bg-gradient-to-r ${m.color}`} />
         <div className="flex items-start justify-between mb-3">
           <div>
-            <h3 className="text-lg font-bold">{estate.name}</h3>
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-bold">{estate.name}</h3>
+              {estate.is_group && (
+                <span className="px-2 py-0.5 text-xs rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
+                  4屋苑
+                </span>
+              )}
+            </div>
             <p className="text-sm text-zinc-500">{estate.name_en}</p>
           </div>
           <span className="text-2xl">{m.emoji}</span>
@@ -46,8 +50,8 @@ export default function EstateCard({ estate }: Props) {
             <p className="font-bold text-blue-400">{formatPricePerSqft(estate.avg_price_per_sqft)}</p>
           </div>
           <div>
-            <span className="text-zinc-500">30日成交</span>
-            <p className="font-medium">{estate.transaction_count_30d || 0} 宗</p>
+            <span className="text-zinc-500">{estate.is_group ? "屋苑數" : "30日成交"}</span>
+            <p className="font-medium">{estate.is_group ? "4 個" : `${estate.transaction_count_30d || 0} 宗`}</p>
           </div>
           <div>
             <span className="text-zinc-500">單位數</span>

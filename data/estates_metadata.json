@@ -80,6 +80,28 @@
     "lng": 113.9970
   },
   {
+    "id": 100,
+    "name": "荔枝角四小龍",
+    "name_en": "Lai Chi Kok Four Little Dragons",
+    "district": "Lai Chi Kok",
+    "region": "Kowloon",
+    "nearest_mtr": "Lai Chi Kok",
+    "mtr_walk_minutes": 5,
+    "total_units": 5008,
+    "building_age_years": 21,
+    "developer": "Multiple",
+    "school_net": "62",
+    "avg_price_per_sqft": 12575,
+    "facilities": ["swimming_pool", "gym", "playground", "garden"],
+    "unit_layouts": ["1房", "2房", "3房"],
+    "phases": 6,
+    "rent_per_sqft": 31,
+    "lat": 22.3370,
+    "lng": 114.1470,
+    "is_group": true,
+    "member_estates": [5, 6, 7, 8]
+  },
+  {
     "id": 5,
     "name": "昇悅居",
     "name_en": "Harmony Place",

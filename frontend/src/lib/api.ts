@@ -17,6 +17,11 @@ export interface Estate {
   unit_layouts: string[];
   phases: number;
   transaction_count_30d: number;
+  is_group: boolean;
+  member_estates: number[];
+  members?: Estate[];
+  price_range?: { min: number; max: number };
+  price_history?: PriceHistoryPoint[];
 }
 
 export interface Listing {

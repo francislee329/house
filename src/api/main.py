@@ -19,6 +19,7 @@ estates_meta = {e["id"]: e for e in load_estates_metadata()}
 
 
 def _estate_to_dict(e: Estate) -> dict:
+    meta = estates_meta.get(e.id, {})
     return {
         "id": e.id,
         "name": e.name,
@@ -35,6 +36,8 @@ def _estate_to_dict(e: Estate) -> dict:
         "facilities": json.loads(e.facilities) if e.facilities else [],
         "unit_layouts": json.loads(e.unit_layouts) if e.unit_layouts else [],
         "phases": e.phases,
+        "is_group": meta.get("is_group", False),
+        "member_estates": meta.get("member_estates", []),
     }
 
 
@@ -98,13 +101,51 @@ def get_estate(estate_id: int):
         if not estate:
             return {"error": "Estate not found"}
         d = _estate_to_dict(estate)
-        listings = db.query(Listing).filter(Listing.estate_id == estate_id).all()
-        prices = [l.price_per_sqft for l in listings if l.price_per_sqft]
-        d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
 
-        history = db.query(PriceHistory).filter(PriceHistory.estate_id == estate_id)\
-            .order_by(PriceHistory.month).all()
-        d["price_history"] = [{"month": h.month, "avg_price_per_sqft": h.avg_price_per_sqft, "volume": h.volume} for h in history]
+        if d.get("is_group") and d.get("member_estates"):
+            member_ids = d["member_estates"]
+            all_listings = db.query(Listing).filter(Listing.estate_id.in_(member_ids)).all()
+            all_txns = db.query(Transaction).filter(Transaction.estate_id.in_(member_ids)).all()
+            all_history = db.query(PriceHistory).filter(PriceHistory.estate_id.in_(member_ids))\
+                .order_by(PriceHistory.month).all()
+
+            prices = [l.price_per_sqft for l in all_listings if l.price_per_sqft]
+            d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
+
+            monthly = {}
+            for h in all_history:
+                if h.month not in monthly:
+                    monthly[h.month] = {"prices": [], "volume": 0}
+                monthly[h.month]["prices"].append(h.avg_price_per_sqft)
+                monthly[h.month]["volume"] += h.volume
+            d["price_history"] = [
+                {"month": m, "avg_price_per_sqft": round(sum(v["prices"]) / len(v["prices"])),
+                 "volume": v["volume"]}
+                for m, v in sorted(monthly.items())
+            ]
+
+            members = []
+            for mid in member_ids:
+                me = db.query(Estate).filter(Estate.id == mid).first()
+                if me:
+                    md = _estate_to_dict(me)
+                    m_listings = db.query(Listing).filter(Listing.estate_id == mid).all()
+                    m_prices = [l.price_per_sqft for l in m_listings if l.price_per_sqft]
+                    md["price_range"] = {"min": min(m_prices) if m_prices else 0, "max": max(m_prices) if m_prices else 0}
+                    md["listing_count"] = len(m_listings)
+                    m_txns = db.query(Transaction).filter(Transaction.estate_id == mid).count()
+                    md["transaction_count_30d"] = m_txns
+                    members.append(md)
+            d["members"] = members
+        else:
+            listings = db.query(Listing).filter(Listing.estate_id == estate_id).all()
+            prices = [l.price_per_sqft for l in listings if l.price_per_sqft]
+            d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
+
+            history = db.query(PriceHistory).filter(PriceHistory.estate_id == estate_id)\
+                .order_by(PriceHistory.month).all()
+            d["price_history"] = [{"month": h.month, "avg_price_per_sqft": h.avg_price_per_sqft, "volume": h.volume} for h in history]
+
         return d
     finally:
         db.close()
