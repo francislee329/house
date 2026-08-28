@@ -18,6 +18,9 @@ RISK_SCORES = {
     "high": -10,
 }
 
+# Inverted: high = good for these factors
+RISK_INVERTED = {"elevator_reliability"}
+
 
 def compute_value_score(
     price_per_sqft: float,
@@ -83,7 +86,10 @@ def compute_value_score(
     if risk_factors:
         risk_score = 0
         for key, value in risk_factors.items():
-            risk_score += RISK_SCORES.get(value, 0)
+            score = RISK_SCORES.get(value, 0)
+            if key in RISK_INVERTED:
+                score = -score  # invert: high = good
+            risk_score += score
         risk_penalty = max(0, min(100, 50 + risk_score))
 
     total = (

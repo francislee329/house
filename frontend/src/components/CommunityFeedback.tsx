@@ -23,17 +23,23 @@ const RISK_LABELS: Record<string, string> = {
   resale_difficulty: "轉售難度",
 };
 
-const RISK_COLORS: Record<string, string> = {
-  low: "text-emerald-400",
-  medium: "text-amber-400",
-  high: "text-red-400",
-};
+const RISK_INVERTED = new Set(["elevator_reliability"]);
 
-const RISK_BG: Record<string, string> = {
-  low: "bg-emerald-500/10 border-emerald-500/30",
-  medium: "bg-amber-500/10 border-amber-500/30",
-  high: "bg-red-500/10 border-red-500/30",
-};
+function getRiskColor(key: string, value: string): string {
+  const isInverted = RISK_INVERTED.has(key);
+  if (isInverted) {
+    return value === "high" ? "text-emerald-400" : value === "medium" ? "text-amber-400" : "text-red-400";
+  }
+  return value === "low" ? "text-emerald-400" : value === "medium" ? "text-amber-400" : "text-red-400";
+}
+
+function getRiskBg(key: string, value: string): string {
+  const isInverted = RISK_INVERTED.has(key);
+  if (isInverted) {
+    return value === "high" ? "bg-emerald-500/10 border-emerald-500/30" : value === "medium" ? "bg-amber-500/10 border-amber-500/30" : "bg-red-500/10 border-red-500/30";
+  }
+  return value === "low" ? "bg-emerald-500/10 border-emerald-500/30" : value === "medium" ? "bg-amber-500/10 border-amber-500/30" : "bg-red-500/10 border-red-500/30";
+}
 
 const RISK_TEXT: Record<string, string> = {
   low: "低",
@@ -88,9 +94,9 @@ export default function CommunityFeedback({ pros, cons, userComplaints, riskFact
         <h3 className="font-bold mb-3">風險評估</h3>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {Object.entries(riskFactors).map(([key, value]) => (
-            <div key={key} className={`rounded-lg border p-3 text-center ${RISK_BG[value]}`}>
+            <div key={key} className={`rounded-lg border p-3 text-center ${getRiskBg(key, value)}`}>
               <p className="text-xs text-zinc-500 mb-1">{RISK_LABELS[key]}</p>
-              <p className={`font-bold ${RISK_COLORS[value]}`}>{RISK_TEXT[value]}</p>
+              <p className={`font-bold ${getRiskColor(key, value)}`}>{RISK_TEXT[value]}</p>
             </div>
           ))}
         </div>

@@ -314,19 +314,24 @@ export default function ComparePage() {
                           <div className="pt-2 border-t border-zinc-800">
                             <p className="text-xs text-zinc-500 mb-1">風險評估</p>
                             <div className="flex flex-wrap gap-1">
-                              {Object.entries(c.risk_factors).map(([key, value]) => (
-                                <span key={key} className={`px-1.5 py-0.5 text-[10px] rounded ${
-                                  value === 'low' ? 'bg-emerald-500/20 text-emerald-400' :
-                                  value === 'medium' ? 'bg-amber-500/20 text-amber-400' :
-                                  'bg-red-500/20 text-red-400'
-                                }`}>
-                                  {key === 'maintenance_cost' ? '維修' :
-                                   key === 'noise_level' ? '噪音' :
-                                   key === 'pest_risk' ? '蟲鼠' :
-                                   key === 'elevator_reliability' ? '電梯' : '轉售'}
-                                  : {value === 'low' ? '低' : value === 'medium' ? '中' : '高'}
-                                </span>
-                              ))}
+                              {Object.entries(c.risk_factors).map(([key, value]) => {
+                                const isInverted = key === 'elevator_reliability';
+                                const isGood = isInverted ? value === 'high' : value === 'low';
+                                const isBad = isInverted ? value === 'low' : value === 'high';
+                                return (
+                                  <span key={key} className={`px-1.5 py-0.5 text-[10px] rounded ${
+                                    isGood ? 'bg-emerald-500/20 text-emerald-400' :
+                                    isBad ? 'bg-red-500/20 text-red-400' :
+                                    'bg-amber-500/20 text-amber-400'
+                                  }`}>
+                                    {key === 'maintenance_cost' ? '維修' :
+                                     key === 'noise_level' ? '噪音' :
+                                     key === 'pest_risk' ? '蟲鼠' :
+                                     key === 'elevator_reliability' ? '電梯' : '轉售'}
+                                    : {value === 'low' ? '低' : value === 'medium' ? '中' : '高'}
+                                  </span>
+                                );
+                              })}
                             </div>
                           </div>
                         )}
