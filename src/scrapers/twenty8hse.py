@@ -11,6 +11,10 @@ ESTATES = {
     2: {"name": "太古城", "avg_psf": 16865},
     3: {"name": "沙田第一城", "avg_psf": 14692},
     4: {"name": "嘉湖山莊", "avg_psf": 8639},
+    5: {"name": "昇悅居", "avg_psf": 13200},
+    6: {"name": "宇晴軒", "avg_psf": 12800},
+    7: {"name": "泓景臺", "avg_psf": 12500},
+    8: {"name": "碧海藍天", "avg_psf": 11800},
 }
 
 FLOORS = ["低層", "中層", "高層"]
@@ -58,9 +62,9 @@ def scrape() -> list[dict]:
     except Exception as e:
         print(f"[28hse] Could not reach 28Hse: {e}")
 
-    print("[28hse] Generating sample listings for 四小龍...")
+    print("[28hse] Generating sample listings for 四小龍 + 西小四小龍...")
     all_listings = []
-    counts = {1: 20, 2: 25, 3: 18, 4: 22}
+    counts = {1: 20, 2: 25, 3: 18, 4: 22, 5: 12, 6: 10, 7: 11, 8: 9}
     for eid, count in counts.items():
         all_listings.extend(_gen_28hse_listings(eid, count))
 

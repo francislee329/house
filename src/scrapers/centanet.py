@@ -12,6 +12,10 @@ ESTATES = {
     2: {"name": "太古城", "name_en": "Taikoo Shing", "avg_psf": 16865, "rent_psf": 38},
     3: {"name": "沙田第一城", "name_en": "Sha Tin First City", "avg_psf": 14692, "rent_psf": 35},
     4: {"name": "嘉湖山莊", "name_en": "Kingswood Villas", "avg_psf": 8639, "rent_psf": 22},
+    5: {"name": "昇悅居", "name_en": "Harmony Place", "avg_psf": 13200, "rent_psf": 33},
+    6: {"name": "宇晴軒", "name_en": "Casper", "avg_psf": 12800, "rent_psf": 32},
+    7: {"name": "泓景臺", "name_en": "Cosmopolitan", "avg_psf": 12500, "rent_psf": 30},
+    8: {"name": "碧海藍天", "name_en": "Liberté", "avg_psf": 11800, "rent_psf": 29},
 }
 
 PHASES = {
@@ -20,14 +24,25 @@ PHASES = {
          "湖景花園", "海天半島", "雍景臺"],
     3: ["1期", "2期", "3期", "4期", "5期"],
     4: ["1期(樂湖居)", "2期(賞湖居)", "3期(翠湖居)", "5期(麗湖居)", "6期(碧湖居)", "7期(景湖居)"],
+    5: ["1期", "2期"],
+    6: ["1座", "2座", "3座", "5座"],
+    7: ["1期", "2期"],
+    8: ["1座", "2座", "3座", "5座"],
 }
 
 FLOORS = ["低層", "中層", "高層"]
 DIRECTIONS = ["東", "南", "西", "北", "東南", "東北", "西南", "西北"]
 BLOCKS_1 = [f"百老匯街{i}號" for i in range(15, 130, 2)]
-BLOCKS_2 = [f"太古城{i}座" for i in ["康山", "康松", "康柏", "康зви", "銀輝", "海天花園", "海景"]]
+BLOCKS_2 = [f"太古城{i}座" for i in ["康山", "康松", "康柏", "康в", "銀輝", "海天花園", "海景"]]
 BLOCKS_3 = [f"{i}座" for i in range(36, 50)]
 BLOCKS_4 = [f"{i}座" for i in range(1, 20)]
+BLOCKS_5 = [f"昇悅居{i}座" for i in ["A", "B", "C"]]
+BLOCKS_6 = [f"宇晴軒{i}座" for i in ["A", "B", "C", "D"]]
+BLOCKS_7 = [f"泓景臺{i}座" for i in ["A", "B", "C"]]
+BLOCKS_8 = [f"碧海藍天{i}座" for i in ["A", "B", "C", "D"]]
+
+BLOCK_MAP = {1: BLOCKS_1, 2: BLOCKS_2, 3: BLOCKS_3, 4: BLOCKS_4,
+             5: BLOCKS_5, 6: BLOCKS_6, 7: BLOCKS_7, 8: BLOCKS_8}
 
 
 def _gen_listings(estate_id: int, count: int) -> list[dict]:
@@ -41,7 +56,7 @@ def _gen_listings(estate_id: int, count: int) -> list[dict]:
         listings.append({
             "estate_id": estate_id,
             "phase": random.choice(PHASES[estate_id]),
-            "block": random.choice(BLOCKS_1 if estate_id == 1 else BLOCKS_2 if estate_id == 2 else BLOCKS_3 if estate_id == 3 else BLOCKS_4),
+            "block": random.choice(BLOCK_MAP[estate_id]),
             "floor": random.choice(FLOORS),
             "flat": random.choice(["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L"]),
             "rooms": random.choice(["1房", "2房", "3房"]),
@@ -68,7 +83,7 @@ def _gen_transactions(estate_id: int, count: int) -> list[dict]:
             "estate_id": estate_id,
             "date": (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d"),
             "phase": random.choice(PHASES[estate_id]),
-            "block": random.choice(BLOCKS_1 if estate_id == 1 else BLOCKS_2 if estate_id == 2 else BLOCKS_3 if estate_id == 3 else BLOCKS_4),
+            "block": random.choice(BLOCK_MAP[estate_id]),
             "floor": random.choice(FLOORS),
             "flat": random.choice(["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L"]),
             "rooms": random.choice(["1房", "2房", "3房"]),
@@ -91,9 +106,9 @@ def scrape_listings() -> list[dict]:
     except Exception as e:
         print(f"[centanet] Could not reach Centanet: {e}")
 
-    print("[centanet] Generating sample listings for 四小龍...")
+    print("[centanet] Generating sample listings for 四小龍 + 西小四小龍...")
     all_listings = []
-    counts = {1: 40, 2: 50, 3: 35, 4: 45}
+    counts = {1: 40, 2: 50, 3: 35, 4: 45, 5: 25, 6: 20, 7: 22, 8: 18}
     for eid, count in counts.items():
         all_listings.extend(_gen_listings(eid, count))
 
@@ -112,7 +127,7 @@ def scrape_transactions() -> list[dict]:
     """Scrape transactions from Centanet."""
     print("[centanet] Generating sample transactions...")
     all_txns = []
-    counts = {1: 30, 2: 40, 3: 25, 4: 35}
+    counts = {1: 30, 2: 40, 3: 25, 4: 35, 5: 20, 6: 15, 7: 18, 8: 12}
     for eid, count in counts.items():
         all_txns.extend(_gen_transactions(eid, count))
 
@@ -134,7 +149,7 @@ def generate_price_history() -> list[dict]:
         base_psf = info["avg_psf"]
         for months_ago in range(36, 0, -1):
             d = datetime.now() - timedelta(days=months_ago * 30)
-            trend_factor = 1 + (36 - months_ago) * 0.002  # slight upward trend
+            trend_factor = 1 + (36 - months_ago) * 0.002
             noise = random.uniform(0.95, 1.05)
             psf = int(base_psf * trend_factor * noise)
             volume = random.randint(10, 40)
