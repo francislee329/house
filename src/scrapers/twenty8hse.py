@@ -157,9 +157,14 @@ def _scrape_estate(estate_id: int, hse_id: int, name: str, max_pages: int) -> li
 def scrape(full: bool = False) -> list[dict]:
     max_pages = FULL_MAX_PAGES if full else UPDATE_MAX_PAGES
     all_txns = []
+    seen = set()
     for eid, e in ESTATES.items():
         txns = _scrape_estate(eid, e["hse_id"], e["name"], max_pages)
-        all_txns.extend(txns)
+        for t in txns:
+            key = (t["estate_id"], t["date"], t["block"], t["flat"])
+            if key not in seen:
+                seen.add(key)
+                all_txns.append(t)
 
     out_path = os.path.join(DATA_DIR, "28hse_listings.csv")
     os.makedirs(DATA_DIR, exist_ok=True)
