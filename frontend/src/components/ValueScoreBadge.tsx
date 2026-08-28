@@ -23,6 +23,7 @@ interface BreakdownProps {
     rental_yield: number;
     location: number;
     building_condition: number;
+    risk_penalty: number;
   };
 }
 
@@ -33,6 +34,7 @@ export function ScoreBreakdownChart({ breakdown }: BreakdownProps) {
     { label: "回報率", value: breakdown.rental_yield, color: "bg-emerald-500" },
     { label: "地段", value: breakdown.location, color: "bg-amber-500" },
     { label: "樓齡", value: breakdown.building_condition, color: "bg-cyan-500" },
+    { label: "風險", value: breakdown.risk_penalty, color: "bg-rose-500" },
   ];
 
   return (

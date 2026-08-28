@@ -9,7 +9,7 @@ for /f "tokens=5" %%a in ('netstat -aon ^| findstr :3000 ^| findstr LISTENING') 
 
 echo.
 echo [1/3] Seeding database...
-uv run python -m src.scrapers.seed_data
+uv run python -m src.scrapers.seed_data --update
 
 echo.
 echo [2/3] Starting API server (port 8000, auto-reload)...

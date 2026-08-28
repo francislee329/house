@@ -22,6 +22,16 @@ export interface Estate {
   members?: Estate[];
   price_range?: { min: number; max: number };
   price_history?: PriceHistoryPoint[];
+  pros?: string[];
+  cons?: string[];
+  user_complaints?: string[];
+  risk_factors?: {
+    maintenance_cost: string;
+    noise_level: string;
+    pest_risk: string;
+    elevator_reliability: string;
+    resale_difficulty: string;
+  };
 }
 
 export interface Listing {
@@ -61,6 +71,7 @@ export interface ScoreBreakdown {
   rental_yield: number;
   location: number;
   building_condition: number;
+  risk_penalty: number;
 }
 
 export interface Transaction {
@@ -92,9 +103,49 @@ export interface CompareItem {
   price_per_sqft: number;
   mtr_walk_minutes: number;
   value_score: number;
-  monthly_mortgage: number;
-  estimated_rent: number;
-  rental_yield: number;
+  cash_flow: {
+    estimated_monthly_rent: number;
+    monthly_mortgage: number;
+    net_monthly_cashflow: number;
+    annual_yield_pct: number;
+    mortgage_rate_pct: number;
+    yield_vs_mortgage: number;
+    is_positive_cashflow: boolean;
+  };
+  stress_test: {
+    monthly_mortgage: number;
+    months_unemployed: number;
+    savings_needed: number;
+    breakeven_months: number;
+    passes_stress_test: boolean;
+    rent_covers_mortgage: boolean;
+  };
+  transaction_costs: {
+    stamp_duty: number;
+    agent_fee: number;
+    lawyer_fee: number;
+    total_upfront_cost: number;
+    stamp_duty_pct: number;
+  };
+  bank_valuation: {
+    estimated_value: number;
+    lenders_ltv: number;
+    max_loan: number;
+    min_downpayment: number;
+  };
+  investment_score: {
+    score: number;
+    verdict: string;
+  };
+  estate_pros?: string[];
+  estate_cons?: string[];
+  risk_factors?: {
+    maintenance_cost: string;
+    noise_level: string;
+    pest_risk: string;
+    elevator_reliability: string;
+    resale_difficulty: string;
+  };
 }
 
 export interface PriceHistoryPoint {
@@ -152,4 +203,57 @@ export const api = {
     fetchAPI<Record<string, RoomGroup>>("/transactions/by-room"),
   getTransactionsByRoomEstate: (estateId: number) =>
     fetchAPI<{ estate_name: string; rooms: Record<string, RoomGroup> }>(`/transactions/by-room/${estateId}`),
+  getInvestmentAnalysis: (estateId: number, price?: number, area?: number) => {
+    const params: Record<string, string> = {};
+    if (price) params.price = price.toString();
+    if (area) params.area = area.toString();
+    return fetchAPI<{
+      estate_id: number;
+      estate_name: string;
+      rent_per_sqft: number;
+      cash_flow: {
+        estimated_monthly_rent: number;
+        monthly_mortgage: number;
+        net_monthly_cashflow: number;
+        annual_yield_pct: number;
+        mortgage_rate_pct: number;
+        yield_vs_mortgage: number;
+        is_positive_cashflow: boolean;
+      } | null;
+      stress_test: {
+        monthly_mortgage: number;
+        months_unemployed: number;
+        savings_needed: number;
+        breakeven_months: number;
+        passes_stress_test: boolean;
+        rent_covers_mortgage: boolean;
+      } | null;
+      transaction_costs: {
+        stamp_duty: number;
+        agent_fee: number;
+        lawyer_fee: number;
+        total_upfront_cost: number;
+        stamp_duty_pct: number;
+      } | null;
+      bank_valuation: {
+        estimated_value: number;
+        lenders_ltv: number;
+        max_loan: number;
+        min_downpayment: number;
+      } | null;
+      investment_score: {
+        score: number;
+        verdict: string;
+      } | null;
+      pros: string[];
+      cons: string[];
+      risk_factors: {
+        maintenance_cost: string;
+        noise_level: string;
+        pest_risk: string;
+        elevator_reliability: string;
+        resale_difficulty: string;
+      };
+    }>("/investment-analysis/" + estateId, params);
+  },
 };

@@ -8,7 +8,15 @@ class ScoreBreakdown:
     rental_yield: float
     location: float
     building_condition: float
+    risk_penalty: float
     total: float
+
+
+RISK_SCORES = {
+    "low": 10,
+    "medium": 0,
+    "high": -10,
+}
 
 
 def compute_value_score(
@@ -18,16 +26,18 @@ def compute_value_score(
     rent_per_sqft: float,
     mtr_walk_minutes: int,
     building_age_years: int,
+    risk_factors: dict = None,
 ) -> ScoreBreakdown:
     """
     Compute a value score (0-100) for a property listing.
 
     Weights:
-    - price_vs_historical: 30%  (lower vs historical = better)
-    - price_vs_peers: 25%       (lower vs peers = better)
+    - price_vs_historical: 25%  (lower vs historical = better)
+    - price_vs_peers: 20%       (lower vs peers = better)
     - rental_yield: 20%         (higher yield = better)
     - location: 15%             (closer to MTR = better)
     - building_condition: 10%   (newer = better)
+    - risk_penalty: 10%         (lower risk = better)
     """
     # Price vs historical: how much cheaper than average
     if avg_historical_psf > 0:
@@ -68,12 +78,21 @@ def compute_value_score(
     else:
         building_condition = 30.0
 
+    # Risk penalty: based on risk factors
+    risk_penalty = 50.0  # neutral
+    if risk_factors:
+        risk_score = 0
+        for key, value in risk_factors.items():
+            risk_score += RISK_SCORES.get(value, 0)
+        risk_penalty = max(0, min(100, 50 + risk_score))
+
     total = (
-        price_vs_historical * 0.30
-        + price_vs_peers * 0.25
+        price_vs_historical * 0.25
+        + price_vs_peers * 0.20
         + rental_yield * 0.20
         + location * 0.15
         + building_condition * 0.10
+        + risk_penalty * 0.10
     )
 
     return ScoreBreakdown(
@@ -82,5 +101,6 @@ def compute_value_score(
         rental_yield=round(rental_yield, 1),
         location=round(location, 1),
         building_condition=round(building_condition, 1),
+        risk_penalty=round(risk_penalty, 1),
         total=round(total, 1),
     )

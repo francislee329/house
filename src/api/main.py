@@ -18,6 +18,100 @@ from analysis.location import load_estates_metadata
 MORTGAGE_RATE = 0.035
 LTV_RATIO = 0.7
 LOAN_TERM_YEARS = 25
+UNEMPLOYMENT_MONTHS = 6
+AGENT_FEE_RATE = 0.01
+STAMP_DUTY_RATE = 0.0225
+RATES_ANNUAL = 0.003
+GOVT_RENT_ANNUAL = 0.03
+PROPERTY_TAX_RATE = 0.15
+
+
+def _compute_monthly_mortgage(price: float) -> dict:
+    loan = price * LTV_RATIO
+    monthly_rate = MORTGAGE_RATE / 12
+    n = LOAN_TERM_YEARS * 12
+    if monthly_rate > 0:
+        monthly = loan * monthly_rate / (1 - (1 + monthly_rate) ** (-n))
+    else:
+        monthly = loan / n
+    total_interest = monthly * n - loan
+    return {
+        "loan_amount": round(loan),
+        "monthly_payment": round(monthly),
+        "total_interest": round(total_interest),
+        "total_cost": round(loan + total_interest),
+    }
+
+
+def _compute_cash_flow(price: float, area_sqft: int, rent_per_sqft: float) -> dict:
+    mortgage = _compute_monthly_mortgage(price)
+    est_rent = rent_per_sqft * area_sqft
+    net = est_rent - mortgage["monthly_payment"]
+    annual_yield = (rent_per_sqft * 12) / (price / area_sqft) if price > 0 else 0
+    return {
+        "estimated_monthly_rent": round(est_rent),
+        "monthly_mortgage": mortgage["monthly_payment"],
+        "net_monthly_cashflow": round(net),
+        "annual_yield_pct": round(annual_yield * 100, 2),
+        "mortgage_rate_pct": round(MORTGAGE_RATE * 100, 2),
+        "yield_vs_mortgage": round(annual_yield / MORTGAGE_RATE, 2) if MORTGAGE_RATE > 0 else 0,
+        "is_positive_cashflow": net >= 0,
+    }
+
+
+def _compute_stress_test(price: float, area_sqft: int, rent_per_sqft: float) -> dict:
+    mortgage = _compute_monthly_mortgage(price)
+    monthly = mortgage["monthly_payment"]
+    savings_needed = monthly * UNEMPLOYMENT_MONTHS
+    est_rent = rent_per_sqft * area_sqft
+    net = est_rent - monthly
+    return {
+        "monthly_mortgage": monthly,
+        "months_unemployed": UNEMPLOYMENT_MONTHS,
+        "savings_needed": round(savings_needed),
+        "breakeven_months": round(savings_needed / max(net, 1)),
+        "passes_stress_test": savings_needed <= net * UNEMPLOYMENT_MONTHS * 3,
+        "rent_covers_mortgage": est_rent >= monthly,
+    }
+
+
+def _compute_transaction_costs(price: float) -> dict:
+    stamp_duty = price * STAMP_DUTY_RATE
+    agent_fee = price * AGENT_FEE_RATE
+    lawyer_fee = 15000
+    total_upfront = stamp_duty + agent_fee + lawyer_fee
+    return {
+        "stamp_duty": round(stamp_duty),
+        "agent_fee": round(agent_fee),
+        "lawyer_fee": lawyer_fee,
+        "total_upfront_cost": round(total_upfront),
+        "stamp_duty_pct": STAMP_DUTY_RATE * 100,
+    }
+
+
+def _compute_bank_valuation(price_per_sqft: int, area_sqft: int) -> dict:
+    estimated_value = price_per_sqft * area_sqft
+    return {
+        "estimated_value": estimated_value,
+        "lenders_ltv": LTV_RATIO * 100,
+        "max_loan": round(estimated_value * LTV_RATIO),
+        "min_downpayment": round(estimated_value * (1 - LTV_RATIO)),
+    }
+
+
+def _compute_investment_score(cash_flow: dict, stress: dict, costs: dict, age: int) -> dict:
+    score = 50
+    if cash_flow["is_positive_cashflow"]:
+        score += 20
+    if cash_flow["yield_vs_mortgage"] >= 1:
+        score += 10
+    if stress["passes_stress_test"]:
+        score += 10
+    if cash_flow["annual_yield_pct"] >= 3.5:
+        score += 5
+    if age <= 20:
+        score += 5
+    return {"score": min(score, 100), "verdict": "值得考慮" if score >= 70 else "需要謹慎" if score >= 50 else "不建議"}
 
 
 def get_db():
@@ -47,6 +141,7 @@ def _get_peer_avg(db: Session) -> float:
 def _compute_score(db: Session, listing: Listing, estate: Estate) -> float:
     meta = estates_meta.get(listing.estate_id, {})
     rent_psf = meta.get("rent_per_sqft", 30)
+    risk_factors = meta.get("risk_factors", {})
     peer_avg = _get_peer_avg(db)
     hist_avg = estate.avg_price_per_sqft or peer_avg
     score = compute_value_score(
@@ -56,6 +151,7 @@ def _compute_score(db: Session, listing: Listing, estate: Estate) -> float:
         rent_per_sqft=rent_psf,
         mtr_walk_minutes=estate.mtr_walk_minutes or 5,
         building_age_years=estate.building_age_years or 40,
+        risk_factors=risk_factors,
     )
     return score
 
@@ -80,6 +176,10 @@ def _estate_to_dict(e: Estate) -> dict:
         "phases": e.phases,
         "is_group": meta.get("is_group", False),
         "member_estates": meta.get("member_estates", []),
+        "pros": meta.get("pros", []),
+        "cons": meta.get("cons", []),
+        "user_complaints": meta.get("user_complaints", []),
+        "risk_factors": meta.get("risk_factors", {}),
     }
 
 
@@ -261,6 +361,7 @@ def ranking(
                 "rental_yield": score.rental_yield,
                 "location": score.location,
                 "building_condition": score.building_condition,
+                "risk_penalty": score.risk_penalty,
             },
         })
 
@@ -437,6 +538,42 @@ def chart_data(estate_id: int, period: str = Query("3y"), db: Session = Depends(
     }
 
 
+@app.get("/api/investment-analysis/{estate_id}")
+def investment_analysis(estate_id: int, price: int = Query(None), area: int = Query(None), db: Session = Depends(get_db)):
+    estate = db.query(Estate).filter(Estate.id == estate_id).first()
+    if not estate:
+        return {"error": "Estate not found"}
+    meta = estates_meta.get(estate_id, {})
+    rent_psf = meta.get("rent_per_sqft", 30)
+    
+    if price and area:
+        cash_flow = _compute_cash_flow(price, area, rent_psf)
+        stress = _compute_stress_test(price, area, rent_psf)
+        costs = _compute_transaction_costs(price)
+        valuation = _compute_bank_valuation(price // area if area > 0 else 0, area)
+        invest_score = _compute_investment_score(cash_flow, stress, costs, estate.building_age_years)
+    else:
+        cash_flow = None
+        stress = None
+        costs = None
+        valuation = None
+        invest_score = None
+    
+    return {
+        "estate_id": estate_id,
+        "estate_name": estate.name,
+        "rent_per_sqft": rent_psf,
+        "cash_flow": cash_flow,
+        "stress_test": stress,
+        "transaction_costs": costs,
+        "bank_valuation": valuation,
+        "investment_score": invest_score,
+        "pros": meta.get("pros", []),
+        "cons": meta.get("cons", []),
+        "risk_factors": meta.get("risk_factors", {}),
+    }
+
+
 @app.get("/api/compare")
 def compare(ids: str = Query(...), db: Session = Depends(get_db)):
     id_list = [int(x.strip()) for x in ids.split(",") if x.strip()]
@@ -451,14 +588,13 @@ def compare(ids: str = Query(...), db: Session = Depends(get_db)):
         meta = estates_meta.get(listing.estate_id, {})
         score = _compute_score(db, listing, estate)
         rent_psf = meta.get("rent_per_sqft", 30)
-        est_rent = rent_psf * listing.area_sqft
-        loan_amount = listing.price * LTV_RATIO
-        monthly_rate = MORTGAGE_RATE / 12
-        num_payments = LOAN_TERM_YEARS * 12
-        if monthly_rate > 0:
-            monthly_mortgage = int(loan_amount * monthly_rate / (1 - (1 + monthly_rate) ** (-num_payments)))
-        else:
-            monthly_mortgage = int(loan_amount / num_payments)
+
+        cash_flow = _compute_cash_flow(listing.price, listing.area_sqft, rent_psf)
+        stress = _compute_stress_test(listing.price, listing.area_sqft, rent_psf)
+        costs = _compute_transaction_costs(listing.price)
+        valuation = _compute_bank_valuation(listing.price_per_sqft, listing.area_sqft)
+        invest_score = _compute_investment_score(cash_flow, stress, costs, estate.building_age_years if estate else 30)
+
         results.append({
             "id": listing.id,
             "estate_name": estate.name if estate else "",
@@ -472,9 +608,14 @@ def compare(ids: str = Query(...), db: Session = Depends(get_db)):
             "price_per_sqft": listing.price_per_sqft,
             "mtr_walk_minutes": estate.mtr_walk_minutes if estate else 0,
             "value_score": score.total if hasattr(score, 'total') else score,
-            "monthly_mortgage": monthly_mortgage,
-            "estimated_rent": est_rent,
-            "rental_yield": round(est_rent * 12 / listing.price * 100, 1) if listing.price > 0 else 0,
+            "cash_flow": cash_flow,
+            "stress_test": stress,
+            "transaction_costs": costs,
+            "bank_valuation": valuation,
+            "investment_score": invest_score,
+            "estate_pros": meta.get("pros", []),
+            "estate_cons": meta.get("cons", []),
+            "risk_factors": meta.get("risk_factors", {}),
         })
     return {"listings": results}
 

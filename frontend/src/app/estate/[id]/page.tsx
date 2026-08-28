@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { api, Estate, Transaction, RoomGroup } from "@/lib/api";
 import EstateTrendChart from "@/components/EstateTrendChart";
+import CommunityFeedback from "@/components/CommunityFeedback";
 import { formatPrice, formatPricePerSqft } from "@/lib/utils";
 
 export default function EstateDetailPage() {
@@ -120,6 +121,19 @@ function GroupEstateDetail({ estate, members, transactions, roomData }: { estate
         <RentalYieldCard roomData={roomData} />
       )}
 
+      {estate.pros && estate.cons && estate.user_complaints && estate.risk_factors && (
+        <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
+          <h2 className="font-bold mb-2">屋苑評價</h2>
+          <p className="text-sm text-zinc-500 mb-4">綜合分析 — 尋視點、LIHKG、香港討論區、胡說樓市</p>
+          <CommunityFeedback
+            pros={estate.pros}
+            cons={estate.cons}
+            userComplaints={estate.user_complaints}
+            riskFactors={estate.risk_factors}
+          />
+        </div>
+      )}
+
       <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
         <h2 className="font-bold mb-4">近期成交（全部屋苑）</h2>
         {transactions.length === 0 ? (
@@ -228,6 +242,19 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
 
       {roomData && (
         <RentalYieldCard roomData={roomData} />
+      )}
+
+      {estate.pros && estate.cons && estate.user_complaints && estate.risk_factors && (
+        <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
+          <h2 className="font-bold mb-2">屋苑評價</h2>
+          <p className="text-sm text-zinc-500 mb-4">綜合分析 — 尋視點、LIHKG、香港討論區、胡說樓市</p>
+          <CommunityFeedback
+            pros={estate.pros}
+            cons={estate.cons}
+            userComplaints={estate.user_complaints}
+            riskFactors={estate.risk_factors}
+          />
+        </div>
       )}
 
       <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">

@@ -12,12 +12,16 @@
     "developer": "New World / Sino Land",
     "school_net": "40",
     "avg_price_per_sqft": 10777,
-    "facilities": ["swimming_pool", "gym", "playground", "shopping_centre", "tennis_court"],
-    "unit_layouts": ["1房", "2房", "3房"],
+    "facilities": ["shopping_centre", "garden", "playground"],
+    "unit_layouts": ["1房", "2房", "3房", "4房"],
     "phases": 8,
     "rent_per_sqft": 30,
     "lat": 22.3380,
-    "lng": 114.1350
+    "lng": 114.1350,
+    "pros": ["雙鐵路(荃灣線+屯馬線)", "間隔四正實用率高", "民生配套齊全", "毗鄰荔枝角公園", "全港第二大屋苑人口3.7萬"],
+    "cons": ["樓齡53年按揭有隱憂", "無住客會所", "部分頂層要行樓梯(鳳凰樓)", "第三期近焚化爐舊址", "部分座數較陰暗"],
+    "user_complaints": ["管理費偏高但保安一般", "樓與樓之間較近感覺焗促", "部分座數梯間昏暗", "大廈維修費持續上升", "夏天易有蟲鼠問題"],
+    "risk_factors": {"maintenance_cost": "high", "noise_level": "medium", "pest_risk": "medium", "elevator_reliability": "medium", "resale_difficulty": "low"}
   },
   {
     "id": 2,
@@ -32,12 +36,16 @@
     "developer": "Swire Properties",
     "school_net": "14",
     "avg_price_per_sqft": 15500,
-    "facilities": ["swimming_pool", "gym", "playground", "shopping_centre", "garden"],
+    "facilities": ["swimming_pool", "garden", "playground", "shopping_centre"],
     "unit_layouts": ["2房", "3房", "4房"],
     "phases": 12,
     "rent_per_sqft": 42,
     "lat": 22.2860,
-    "lng": 114.2140
+    "lng": 114.2140,
+    "pros": ["港鐵太古站上蓋", "太古地產管理質素保證", "間隔方正實用率超八成", "附近甲級商廈租務需求穩定", "海景花園享無敵海景"],
+    "cons": ["無住客會所", "部分座數建於斜坡真實距離較遠", "翠湖臺近東區走廊噪音", "樓齡47年部分超40年", "管理費平但設施有限"],
+    "user_complaints": ["部分頂層單位無電梯直達", "金殿臺景觀被遮擋", "翠湖臺低層受車聲噪音", "大廈維修費用上升", "部分樓齡較高座數轉售困難"],
+    "risk_factors": {"maintenance_cost": "medium", "noise_level": "medium", "pest_risk": "low", "elevator_reliability": "medium", "resale_difficulty": "medium"}
   },
   {
     "id": 3,
@@ -57,7 +65,11 @@
     "phases": 5,
     "rent_per_sqft": 32,
     "lat": 22.3820,
-    "lng": 114.1890
+    "lng": 114.1890,
+    "pros": ["校網優勢(91區多Band1)", "間隔實用無窗台", "交通方便有巴士直達港九", "有城門河畔休憩空間", "民生商鋪齊全"],
+    "cons": ["樓齡41年轉售困難", "鎖車隊聞名行動快", "大廈維修費頻繁", "外賣配送困難", "部分單位漏水嚴重"],
+    "user_complaints": ["管理處只識鎖車", "夏天多曱甴老鼠", "電梯經常故障容量細", "維修費動輒幾萬", "私家喉管老化易爆", "大堂走廊殘舊"],
+    "risk_factors": {"maintenance_cost": "high", "noise_level": "low", "pest_risk": "high", "elevator_reliability": "low", "resale_difficulty": "high"}
   },
   {
     "id": 4,
@@ -77,7 +89,11 @@
     "phases": 7,
     "rent_per_sqft": 22,
     "lat": 22.4450,
-    "lng": 113.9970
+    "lng": 113.9970,
+    "pros": ["全港最大屋苑15880伙", "樓齡較輕30年", "會所設施齊全", "呎價最平入場門檻低", "天水圍站上蓋交通方便"],
+    "cons": ["遠離市區交通時間長", "天水圍區負面標籤", "周邊就業機會少", "商場規模較細", "冬天風大較凍"],
+    "user_complaints": ["管理費持續上升", "部分單位望墳場", "區內配套不如市區", "部分期數近輕軌噪音", "轉售盤多競爭大"],
+    "risk_factors": {"maintenance_cost": "low", "noise_level": "low", "pest_risk": "low", "elevator_reliability": "high", "resale_difficulty": "medium"}
   },
   {
     "id": 100,
@@ -99,7 +115,11 @@
     "lat": 22.3370,
     "lng": 114.1470,
     "is_group": true,
-    "member_estates": [5, 6, 7, 8]
+    "member_estates": [5, 6, 7, 8],
+    "pros": ["樓齡輕約20年", "港鐵荔枝角站", "會所設施齊全", "呎價合理租回報高", "長實/新地/嘉里管理質素"],
+    "cons": ["部分屋苑近公路噪音", "屋苑規模較細", "商場規模有限", "部分單位望樓景", "停車位不足"],
+    "user_complaints": ["泓景臺近高速公路噪音", "碧海藍天平台較細", "昇悅居停車場位少", "各屋苑管理費偏高", "部分單位西北向夏天西曬"],
+    "risk_factors": {"maintenance_cost": "low", "noise_level": "medium", "pest_risk": "low", "elevator_reliability": "high", "resale_difficulty": "low"}
   },
   {
     "id": 5,
@@ -119,7 +139,11 @@
     "phases": 2,
     "rent_per_sqft": 46,
     "lat": 22.3370,
-    "lng": 114.1480
+    "lng": 114.1480,
+    "pros": ["新地發展管理質素佳", "樓齡23年設施新淨", "會所泳池齊全", "近荔枝角公園休憩空間", "交通方便近港鐵"],
+    "cons": ["屋苑規模較細", "部分單位望樓景", "停車位不足", "商場規模有限", "部分座數近公路"],
+    "user_complaints": ["管理費偏高", "部分單位西曬", "平台花園較細", "附近餐飲選擇少", "周末車位緊張"],
+    "risk_factors": {"maintenance_cost": "low", "noise_level": "low", "pest_risk": "low", "elevator_reliability": "high", "resale_difficulty": "low"}
   },
   {
     "id": 6,
@@ -139,7 +163,11 @@
     "phases": 2,
     "rent_per_sqft": 49,
     "lat": 22.3365,
-    "lng": 114.1475
+    "lng": 114.1475,
+    "pros": ["最近港鐵荔枝角站", "新地管理質素高", "呎價最高反映質素", "會所設施新淨", "屋苑保養良好"],
+    "cons": ["呎價最貴入場門檻高", "無網球場設施較少", "部分單位望樓景", "屋苑規模最細", "單位供應少"],
+    "user_complaints": ["呎價偏高性價比低", "管理費最高", "部分單位噪音", "商場規模有限", "停車位不足"],
+    "risk_factors": {"maintenance_cost": "low", "noise_level": "low", "pest_risk": "low", "elevator_reliability": "high", "resale_difficulty": "low"}
   },
   {
     "id": 7,
@@ -159,7 +187,11 @@
     "phases": 3,
     "rent_per_sqft": 42,
     "lat": 22.3375,
-    "lng": 114.1460
+    "lng": 114.1460,
+    "pros": ["長實發展有網球場", "樓齡23年設施齊全", "呎價較平性價比高", "會所設施最多", "近美孚站交通方便"],
+    "cons": ["近高速公路噪音較大", "呎價最低反映位置劣勢", "部分低層受噪音影響", "商場規模有限", "部分單位望公路"],
+    "user_complaints": ["噪音問題最嚴重", "管理費偏高", "部分單位西曬", "平台較細", "附近餐飲選擇少"],
+    "risk_factors": {"maintenance_cost": "low", "noise_level": "high", "pest_risk": "low", "elevator_reliability": "high", "resale_difficulty": "medium"}
   },
   {
     "id": 8,
@@ -179,6 +211,10 @@
     "phases": 1,
     "rent_per_sqft": 48,
     "lat": 22.3360,
-    "lng": 114.1450
+    "lng": 114.1450,
+    "pros": ["嘉里發展管理質素佳", "會所設施齊全有運動中心", "樓齡23年新淨", "呎價高反映質素", "近海景環境較好"],
+    "cons": ["屋苑規模最細", "部分單位望樓景", "商場規模有限", "停車位不足", "呎價最高"],
+    "user_complaints": ["管理費偏高", "平台花園較細", "部分單位噪音", "附近餐飲選擇少", "周末車位緊張"],
+    "risk_factors": {"maintenance_cost": "low", "noise_level": "low", "pest_risk": "low", "elevator_reliability": "high", "resale_difficulty": "low"}
   }
 ]
