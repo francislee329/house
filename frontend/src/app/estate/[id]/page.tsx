@@ -7,6 +7,7 @@ import { api, Estate, Transaction, RoomGroup } from "@/lib/api";
 import EstateTrendChart from "@/components/EstateTrendChart";
 import CommunityFeedback from "@/components/CommunityFeedback";
 import DeveloperBadge, { DeveloperRatingLegend } from "@/components/DeveloperBadge";
+import SchoolNetBadge from "@/components/SchoolNetBadge";
 import { formatPrice, formatPricePerSqft } from "@/lib/utils";
 
 export default function EstateDetailPage() {
@@ -222,7 +223,10 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
                 <span className="text-zinc-500">發展商</span>
                 <DeveloperBadge developer={estate.developer} info={estate.developer_info} showDescription />
               </div>
-              <Row label="校網" value={estate.school_net} />
+              <div className="flex justify-between items-start">
+                <span className="text-zinc-500">校網</span>
+                <SchoolNetBadge net={estate.school_net} info={estate.school_net_info} />
+              </div>
               <Row label="期數" value={`${estate.phases}期`} />
             </div>
           </div>

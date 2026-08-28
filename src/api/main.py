@@ -15,6 +15,7 @@ from database.models import Estate, Listing, Transaction, PriceHistory
 from analysis.scoring import compute_value_score
 from analysis.location import load_estates_metadata
 from analysis.developers import DEVELOPERS, RATING_COLORS
+from analysis.school_nets import get_school_net_info
 
 MORTGAGE_RATE = 0.035
 LTV_RATIO = 0.7
@@ -115,6 +116,42 @@ def _compute_investment_score(cash_flow: dict, stress: dict, costs: dict, age: i
     return {"score": min(score, 100), "verdict": "值得考慮" if score >= 70 else "需要謹慎" if score >= 50 else "不建議"}
 
 
+def _compute_price_stats(txns: list) -> dict:
+    """Compute price statistics from transactions, filtering outliers."""
+    prices = [t.price_per_sqft for t in txns if t.price_per_sqft and t.price_per_sqft > 0]
+    if not prices:
+        return {"min": 0, "max": 0, "median": 0, "avg": 0, "count": 0}
+
+    prices_sorted = sorted(prices)
+    n = len(prices_sorted)
+
+    # Median
+    if n % 2 == 0:
+        median = (prices_sorted[n // 2 - 1] + prices_sorted[n // 2]) / 2
+    else:
+        median = prices_sorted[n // 2]
+
+    # Filter outliers: remove values outside 1.5x IQR
+    q1 = prices_sorted[n // 4]
+    q3 = prices_sorted[(n * 3) // 4]
+    iqr = q3 - q1
+    lower_bound = q1 - 1.5 * iqr
+    upper_bound = q3 + 1.5 * iqr
+    filtered = [p for p in prices if lower_bound <= p <= upper_bound]
+
+    if not filtered:
+        filtered = prices  # fallback
+
+    return {
+        "min": min(filtered),
+        "max": max(filtered),
+        "median": round(median),
+        "avg": round(sum(filtered) / len(filtered)),
+        "count": n,
+        "outlier_count": n - len(filtered),
+    }
+
+
 def get_db():
     db = SessionLocal()
     try:
@@ -161,6 +198,7 @@ def _estate_to_dict(e: Estate) -> dict:
     meta = estates_meta.get(e.id, {})
     dev_name = e.developer or "Unknown"
     dev_info = DEVELOPERS.get(dev_name, DEVELOPERS["Unknown"])
+    school_net_info = get_school_net_info(e.school_net or "")
     return {
         "id": e.id,
         "name": e.name,
@@ -174,6 +212,7 @@ def _estate_to_dict(e: Estate) -> dict:
         "developer": e.developer,
         "developer_info": dev_info,
         "school_net": e.school_net,
+        "school_net_info": school_net_info,
         "avg_price_per_sqft": e.avg_price_per_sqft,
         "facilities": eval(e.facilities) if e.facilities else [],
         "unit_layouts": eval(e.unit_layouts) if e.unit_layouts else [],
@@ -221,13 +260,12 @@ def list_estates(db: Session = Depends(get_db)):
         ).count()
         d["transaction_count_30d"] = tx_count
 
-        # Calculate price_range from last 3 months of transactions
+        # Calculate price stats from last 3 months of transactions
         txns = db.query(Transaction).filter(
             Transaction.estate_id == e.id,
             Transaction.date >= three_months_ago,
         ).all()
-        prices = [t.price_per_sqft for t in txns if t.price_per_sqft]
-        d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
+        d["price_range"] = _compute_price_stats(txns)
 
         results.append(d)
     return results
@@ -252,9 +290,8 @@ def get_estate(estate_id: int, db: Session = Depends(get_db)):
         all_history = db.query(PriceHistory).filter(PriceHistory.estate_id.in_(member_ids))\
             .order_by(PriceHistory.month).all()
 
-        # Calculate price_range from recent transactions
-        prices = [t.price_per_sqft for t in all_txns if t.price_per_sqft]
-        d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
+        # Calculate price stats from recent transactions
+        d["price_range"] = _compute_price_stats(all_txns)
 
         monthly = {}
         for h in all_history:
@@ -278,8 +315,7 @@ def get_estate(estate_id: int, db: Session = Depends(get_db)):
                     Transaction.estate_id == mid,
                     Transaction.date >= three_months_ago,
                 ).all()
-                m_prices = [t.price_per_sqft for t in m_txns if t.price_per_sqft]
-                md["price_range"] = {"min": min(m_prices) if m_prices else 0, "max": max(m_prices) if m_prices else 0}
+                md["price_range"] = _compute_price_stats(m_txns)
                 md["listing_count"] = len(db.query(Listing).filter(Listing.estate_id == mid).all())
                 md["transaction_count_30d"] = len(m_txns)
                 members.append(md)

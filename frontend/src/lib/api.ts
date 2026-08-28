@@ -19,6 +19,12 @@ export interface Estate {
     cons: string[];
   };
   school_net: string;
+  school_net_info?: {
+    name_zh: string;
+    district: string;
+    description: string;
+    top_schools: string[];
+  };
   avg_price_per_sqft: number;
   facilities: string[];
   unit_layouts: string[];
