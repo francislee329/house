@@ -14,6 +14,7 @@ from database.db import SessionLocal, init_db
 from database.models import Estate, Listing, Transaction, PriceHistory
 from analysis.scoring import compute_value_score
 from analysis.location import load_estates_metadata
+from analysis.developers import DEVELOPERS, RATING_COLORS
 
 MORTGAGE_RATE = 0.035
 LTV_RATIO = 0.7
@@ -158,6 +159,8 @@ def _compute_score(db: Session, listing: Listing, estate: Estate) -> float:
 
 def _estate_to_dict(e: Estate) -> dict:
     meta = estates_meta.get(e.id, {})
+    dev_name = e.developer or "Unknown"
+    dev_info = DEVELOPERS.get(dev_name, DEVELOPERS["Unknown"])
     return {
         "id": e.id,
         "name": e.name,
@@ -169,6 +172,7 @@ def _estate_to_dict(e: Estate) -> dict:
         "total_units": e.total_units,
         "building_age_years": e.building_age_years,
         "developer": e.developer,
+        "developer_info": dev_info,
         "school_net": e.school_net,
         "avg_price_per_sqft": e.avg_price_per_sqft,
         "facilities": eval(e.facilities) if e.facilities else [],
@@ -625,6 +629,8 @@ def compare(ids: str = Query(...), db: Session = Depends(get_db)):
             "estate_pros": meta.get("pros", []),
             "estate_cons": meta.get("cons", []),
             "risk_factors": meta.get("risk_factors", {}),
+            "developer": estate.developer if estate else "",
+            "developer_info": DEVELOPERS.get(estate.developer if estate else "Unknown", DEVELOPERS["Unknown"]),
         })
     return {"listings": results}
 

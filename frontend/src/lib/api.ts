@@ -11,6 +11,13 @@ export interface Estate {
   total_units: number;
   building_age_years: number;
   developer: string;
+  developer_info?: {
+    rating: string;
+    label: string;
+    description: string;
+    pros: string[];
+    cons: string[];
+  };
   school_net: string;
   avg_price_per_sqft: number;
   facilities: string[];
@@ -145,6 +152,14 @@ export interface CompareItem {
     pest_risk: string;
     elevator_reliability: string;
     resale_difficulty: string;
+  };
+  developer?: string;
+  developer_info?: {
+    rating: string;
+    label: string;
+    description: string;
+    pros: string[];
+    cons: string[];
   };
 }
 

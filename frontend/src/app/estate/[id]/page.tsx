@@ -6,6 +6,7 @@ import Link from "next/link";
 import { api, Estate, Transaction, RoomGroup } from "@/lib/api";
 import EstateTrendChart from "@/components/EstateTrendChart";
 import CommunityFeedback from "@/components/CommunityFeedback";
+import DeveloperBadge from "@/components/DeveloperBadge";
 import { formatPrice, formatPricePerSqft } from "@/lib/utils";
 
 export default function EstateDetailPage() {
@@ -212,7 +213,10 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
               <Row label="最近地鐵" value={`${estate.nearest_mtr} (${estate.mtr_walk_minutes}分鐘)`} />
               <Row label="總單位" value={estate.total_units.toLocaleString()} />
               <Row label="屋齡" value={`${estate.building_age_years}年`} />
-              <Row label="發展商" value={estate.developer} />
+              <div className="flex justify-between items-start">
+                <span className="text-zinc-500">發展商</span>
+                <DeveloperBadge developer={estate.developer} info={estate.developer_info} showDescription />
+              </div>
               <Row label="校網" value={estate.school_net} />
               <Row label="期數" value={`${estate.phases}期`} />
             </div>
