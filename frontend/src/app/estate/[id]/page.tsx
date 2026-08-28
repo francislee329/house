@@ -73,7 +73,7 @@ function GroupEstateDetail({ estate, members, transactions, roomData }: { estate
       </div>
 
       <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
-        <h2 className="font-bold mb-4">屋苑比較</h2>
+        <h2 className="font-bold mb-4">屋苑比較（近3個月）</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
