@@ -6,7 +6,7 @@ import Link from "next/link";
 import { api, Estate, Transaction, RoomGroup } from "@/lib/api";
 import EstateTrendChart from "@/components/EstateTrendChart";
 import CommunityFeedback from "@/components/CommunityFeedback";
-import DeveloperBadge from "@/components/DeveloperBadge";
+import DeveloperBadge, { DeveloperRatingLegend } from "@/components/DeveloperBadge";
 import { formatPrice, formatPricePerSqft } from "@/lib/utils";
 
 export default function EstateDetailPage() {
@@ -194,6 +194,11 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
         <StatCard label="最低呎價" value={formatPricePerSqft(estate.price_range?.min || 0)} color="text-emerald-400" />
         <StatCard label="最高呎價" value={formatPricePerSqft(estate.price_range?.max || 0)} color="text-amber-400" />
         <StatCard label="30日成交" value={`${estate.transaction_count_30d || 0} 宗`} color="text-purple-400" />
+      </div>
+
+      <div className="p-4 rounded-xl bg-[#13131a] border border-zinc-800">
+        <p className="text-xs text-zinc-500 mb-2">發展商評級</p>
+        <DeveloperRatingLegend />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
