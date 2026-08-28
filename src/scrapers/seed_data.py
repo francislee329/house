@@ -21,24 +21,38 @@ def seed_estates(db):
     for e in estates:
         existing = db.query(Estate).filter(Estate.id == e["id"]).first()
         if existing:
-            continue
-        db.add(Estate(
-            id=e["id"],
-            name=e["name"],
-            name_en=e["name_en"],
-            district=e["district"],
-            region=e["region"],
-            nearest_mtr=e["nearest_mtr"],
-            mtr_walk_minutes=e["mtr_walk_minutes"],
-            total_units=e["total_units"],
-            building_age_years=e["building_age_years"],
-            developer=e["developer"],
-            school_net=e["school_net"],
-            avg_price_per_sqft=e["avg_price_per_sqft"],
-            facilities=json.dumps(e["facilities"]),
-            unit_layouts=json.dumps(e["unit_layouts"]),
-            phases=e["phases"],
-        ))
+            existing.name = e["name"]
+            existing.name_en = e["name_en"]
+            existing.district = e["district"]
+            existing.region = e["region"]
+            existing.nearest_mtr = e["nearest_mtr"]
+            existing.mtr_walk_minutes = e["mtr_walk_minutes"]
+            existing.total_units = e["total_units"]
+            existing.building_age_years = e["building_age_years"]
+            existing.developer = e["developer"]
+            existing.school_net = e["school_net"]
+            existing.avg_price_per_sqft = e["avg_price_per_sqft"]
+            existing.facilities = json.dumps(e["facilities"])
+            existing.unit_layouts = json.dumps(e["unit_layouts"])
+            existing.phases = e["phases"]
+        else:
+            db.add(Estate(
+                id=e["id"],
+                name=e["name"],
+                name_en=e["name_en"],
+                district=e["district"],
+                region=e["region"],
+                nearest_mtr=e["nearest_mtr"],
+                mtr_walk_minutes=e["mtr_walk_minutes"],
+                total_units=e["total_units"],
+                building_age_years=e["building_age_years"],
+                developer=e["developer"],
+                school_net=e["school_net"],
+                avg_price_per_sqft=e["avg_price_per_sqft"],
+                facilities=json.dumps(e["facilities"]),
+                unit_layouts=json.dumps(e["unit_layouts"]),
+                phases=e["phases"],
+            ))
     db.commit()
     print(f"[seed] Inserted {len(estates)} estates")
 
