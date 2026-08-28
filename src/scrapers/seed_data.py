@@ -74,8 +74,8 @@ def seed_transactions_from_csv(db, csv_path: str) -> int:
         return 0
 
     existing = set()
-    for t in db.query(Transaction.estate_id, Transaction.date, Transaction.block, Transaction.flat).all():
-        existing.add((t.estate_id, t.date, t.block, t.flat))
+    for t in db.query(Transaction.estate_id, Transaction.date, Transaction.block, Transaction.floor, Transaction.flat).all():
+        existing.add((t.estate_id, t.date, t.block, t.floor, t.flat))
 
     count = 0
     with open(csv_path, encoding="utf-8") as f:
@@ -85,9 +85,10 @@ def seed_transactions_from_csv(db, csv_path: str) -> int:
                 estate_id = int(float(row.get("estate_id", 0)))
                 date = row.get("date", "")
                 block = row.get("block", "")
+                floor = row.get("floor", "")
                 flat = row.get("flat", "")
 
-                if (estate_id, date, block, flat) in existing:
+                if (estate_id, date, block, floor, flat) in existing:
                     continue
 
                 price = int(float(row.get("price", 0)))
@@ -101,7 +102,7 @@ def seed_transactions_from_csv(db, csv_path: str) -> int:
                     date=date,
                     phase=row.get("phase", ""),
                     block=block,
-                    floor=row.get("floor", ""),
+                    floor=floor,
                     flat=flat,
                     rooms=row.get("rooms", ""),
                     area_sqft=area,
@@ -109,7 +110,7 @@ def seed_transactions_from_csv(db, csv_path: str) -> int:
                     price_per_sqft=psf,
                     source=row.get("source", "28hse"),
                 ))
-                existing.add((estate_id, date, block, flat))
+                existing.add((estate_id, date, block, floor, flat))
                 count += 1
             except (ValueError, TypeError):
                 continue

@@ -161,7 +161,7 @@ def scrape(full: bool = False) -> list[dict]:
     for eid, e in ESTATES.items():
         txns = _scrape_estate(eid, e["hse_id"], e["name"], max_pages)
         for t in txns:
-            key = (t["estate_id"], t["date"], t["block"], t["flat"])
+            key = (t["estate_id"], t["date"], t["block"], t["floor"], t["flat"])
             if key not in seen:
                 seen.add(key)
                 all_txns.append(t)
