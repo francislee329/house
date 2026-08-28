@@ -62,7 +62,7 @@ def scrape() -> list[dict]:
     except Exception as e:
         print(f"[28hse] Could not reach 28Hse: {e}")
 
-    print("[28hse] Generating sample listings for 四小龍 + 西小四小龍...")
+    print("[28hse] Generating sample listings for 荔枝角四小龍...")
     all_listings = []
     counts = {1: 20, 2: 25, 3: 18, 4: 22, 5: 12, 6: 10, 7: 11, 8: 9}
     for eid, count in counts.items():

@@ -27,7 +27,7 @@ export default async function Home() {
         <h1 className="text-3xl font-bold mb-2">
           <span className="text-blue-400">HK</span> Flat Value Finder
         </h1>
-        <p className="text-zinc-500">四小龍 + 西小四小龍 — 找出最筍的單位</p>
+        <p className="text-zinc-500">荔枝角四小龍 — 找出最筍的單位</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

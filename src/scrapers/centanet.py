@@ -106,7 +106,7 @@ def scrape_listings() -> list[dict]:
     except Exception as e:
         print(f"[centanet] Could not reach Centanet: {e}")
 
-    print("[centanet] Generating sample listings for 四小龍 + 西小四小龍...")
+    print("[centanet] Generating sample listings for 荔枝角四小龍...")
     all_listings = []
     counts = {1: 40, 2: 50, 3: 35, 4: 45, 5: 25, 6: 20, 7: 22, 8: 18}
     for eid, count in counts.items():
