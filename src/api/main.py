@@ -305,8 +305,13 @@ def transactions_by_room_estate(estate_id: int):
         meta = estates_meta.get(estate_id, {})
         base_rent_psf = meta.get("rent_per_sqft", 28)
 
-        txns = db.query(Transaction).filter(Transaction.estate_id == estate_id)\
-            .order_by(desc(Transaction.date)).all()
+        if meta.get("is_group") and meta.get("member_estates"):
+            member_ids = meta["member_estates"]
+            txns = db.query(Transaction).filter(Transaction.estate_id.in_(member_ids))\
+                .order_by(desc(Transaction.date)).all()
+        else:
+            txns = db.query(Transaction).filter(Transaction.estate_id == estate_id)\
+                .order_by(desc(Transaction.date)).all()
 
         room_groups = defaultdict(list)
         for t in txns:

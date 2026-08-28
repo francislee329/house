@@ -62,7 +62,7 @@ export default function FilterBar({ estates }: Props) {
         />
       </div>
       <div className="flex flex-col gap-1">
-        <label className="text-xs text-zinc-500">最低面積(呎)</label>
+        <label className="text-xs text-zinc-500">最低實用面積(呎)</label>
         <input
           type="number"
           placeholder="不限"

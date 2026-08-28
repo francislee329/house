@@ -36,7 +36,7 @@ export default function RankingPage() {
                     <th className="py-2 px-3 text-center">#</th>
                     <th className="py-2 px-3 text-left">位置</th>
                     <th className="py-2 px-3 text-left">間隔</th>
-                    <th className="py-2 px-3 text-right">面積</th>
+                    <th className="py-2 px-3 text-right">實用面積</th>
                     <th className="py-2 px-3 text-right">售價</th>
                     <th className="py-2 px-3 text-right">呎價</th>
                     <th className="py-2 px-3 text-center">評分</th>

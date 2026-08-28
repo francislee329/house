@@ -52,7 +52,7 @@ export default function ComparePage() {
                     <th className="py-2 px-2 w-8"></th>
                     <th className="py-2 px-3 text-left">位置</th>
                     <th className="py-2 px-3 text-left">間隔</th>
-                    <th className="py-2 px-3 text-right">面積</th>
+                    <th className="py-2 px-3 text-right">實用面積</th>
                     <th className="py-2 px-3 text-right">售價</th>
                     <th className="py-2 px-3 text-right">呎價</th>
                     <th className="py-2 px-3 text-center">評分</th>
@@ -104,7 +104,7 @@ export default function ComparePage() {
                   </thead>
                   <tbody>
                     <CompareRow label="售價" values={compared.map((c) => formatPrice(c.price))} />
-                    <CompareRow label="面積" values={compared.map((c) => `${c.area_sqft} 呎`)} />
+                    <CompareRow label="實用面積" values={compared.map((c) => `${c.area_sqft} 呎`)} />
                     <CompareRow label="呎價" values={compared.map((c) => formatPricePerSqft(c.price_per_sqft))} />
                     <CompareRow label="間隔" values={compared.map((c) => c.rooms)} />
                     <CompareRow label="樓層" values={compared.map((c) => `${c.floor} ${c.flat}室`)} />
