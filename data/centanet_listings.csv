@@ -1,256 +1,256 @@
 estate_id,phase,block,floor,flat,rooms,area_sqft,price,price_per_sqft,direction,source,listing_url,listed_date
-1,1期,百老匯街29號,中層,F,2房,350,4501000,12860,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_0,2026-08-01
-1,5期,百老匯街61號,低層,G,3房,950,7739650,8147,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_1,2026-07-30
-1,8期,百老匯街67號,中層,F,3房,750,7648500,10198,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_2,2026-08-28
-1,3期,百老匯街67號,中層,L,3房,465,5872485,12629,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_3,2026-08-27
-1,7期,百老匯街81號,高層,E,1房,950,10646650,11207,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_4,2026-07-30
-1,1期,百老匯街15號,高層,J,3房,465,5904105,12697,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_5,2026-08-19
-1,6期,百老匯街31號,中層,A,3房,550,6232600,11332,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_6,2026-08-19
-1,2期,百老匯街63號,中層,A,3房,465,5398650,11610,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_7,2026-08-02
-1,3期,百老匯街99號,中層,E,3房,400,4900000,12250,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_8,2026-08-27
-1,5期,百老匯街107號,低層,G,2房,900,6985800,7762,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_9,2026-08-05
-1,1期,百老匯街19號,中層,F,1房,800,6795200,8494,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_10,2026-08-10
-1,6期,百老匯街73號,中層,H,3房,550,6220500,11310,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_11,2026-08-25
-1,3期,百老匯街43號,高層,G,1房,900,8290800,9212,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_12,2026-08-12
-1,4期,百老匯街89號,中層,C,2房,350,4222050,12063,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_13,2026-08-14
-1,1期,百老匯街17號,中層,A,3房,400,3128800,7822,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_14,2026-08-21
-1,7期,百老匯街127號,高層,J,1房,700,8061900,11517,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_15,2026-08-10
-1,2期,百老匯街31號,低層,L,1房,350,3490200,9972,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_16,2026-07-30
-1,3期,百老匯街115號,高層,G,1房,530,6575710,12407,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_17,2026-08-23
-1,1期,百老匯街73號,中層,H,3房,450,5184450,11521,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_18,2026-08-21
-1,2期,百老匯街121號,高層,B,1房,450,3969900,8822,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_19,2026-08-12
-1,3期,百老匯街115號,高層,J,1房,800,10330400,12913,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_20,2026-08-28
-1,5期,百老匯街65號,中層,F,1房,465,4688595,10083,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_21,2026-08-01
-1,5期,百老匯街25號,低層,H,1房,304,3405104,11201,東北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_22,2026-08-05
-1,7期,百老匯街59號,中層,H,2房,304,3442496,11324,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_23,2026-08-03
-1,1期,百老匯街99號,低層,F,2房,465,5804595,12483,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_24,2026-08-14
-1,6期,百老匯街77號,中層,D,1房,800,9471200,11839,西,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_25,2026-08-02
-1,3期,百老匯街95號,低層,F,2房,600,7111200,11852,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_26,2026-08-14
-1,5期,百老匯街17號,低層,K,1房,304,3589024,11806,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_27,2026-08-15
-1,6期,百老匯街37號,低層,J,3房,304,2435344,8011,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_28,2026-08-24
-1,4期,百老匯街75號,中層,B,3房,800,10468000,13085,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_29,2026-08-14
-1,4期,百老匯街67號,低層,A,2房,350,4788700,13682,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_30,2026-08-13
-1,7期,百老匯街113號,中層,A,3房,850,11390000,13400,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_31,2026-08-02
-1,7期,百老匯街111號,低層,G,1房,900,9312300,10347,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_32,2026-08-20
-1,1期,百老匯街61號,高層,C,1房,400,3753600,9384,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_33,2026-08-01
-1,2期,百老匯街113號,低層,D,1房,530,6463350,12195,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_34,2026-08-16
-1,7期,百老匯街93號,低層,K,2房,950,8225100,8658,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_35,2026-07-29
-1,6期,百老匯街89號,高層,D,1房,900,11638800,12932,西,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_36,2026-07-29
-1,4期,百老匯街107號,中層,E,2房,350,3247300,9278,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_37,2026-08-17
-1,5期,百老匯街33號,低層,H,3房,700,9419900,13457,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_38,2026-07-30
-1,1期,百老匯街99號,低層,F,3房,304,4111904,13526,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_39,2026-08-14
-2,楓苑,太古城康柏座,中層,E,3房,465,8662020,18628,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_0,2026-08-18
-2,松苑,太古城海景座,中層,J,2房,350,6271300,17918,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_1,2026-08-23
-2,楓苑,太古城海景座,低層,K,3房,400,6968400,17421,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_2,2026-08-18
-2,海天花園,太古城康в座,高層,C,2房,950,13503300,14214,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_3,2026-08-11
-2,海天半島,太古城海天花園座,低層,G,1房,850,15287250,17985,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_4,2026-08-13
-2,雍景臺,太古城海景座,高層,B,2房,950,18798600,19788,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_5,2026-08-15
-2,松苑,太古城銀輝座,中層,D,1房,900,15046200,16718,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_6,2026-08-11
-2,竹苑,太古城海景座,低層,C,1房,900,13417200,14908,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_7,2026-08-12
-2,松苑,太古城康松座,高層,F,1房,304,5928000,19500,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_8,2026-08-09
-2,海景花園,太古城康山座,低層,K,1房,450,6686100,14858,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_9,2026-08-07
-2,湖景花園,太古城海天花園座,中層,A,3房,900,15519600,17244,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_10,2026-08-12
-2,菊苑,太古城康в座,中層,G,1房,950,17586400,18512,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_11,2026-08-27
-2,雍景臺,太古城康松座,高層,L,1房,600,11606400,19344,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_12,2026-08-19
-2,湖景花園,太古城海景座,中層,L,3房,850,16495100,19406,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_13,2026-08-20
-2,雍景臺,太古城康в座,中層,G,2房,450,7067700,15706,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_14,2026-07-30
-2,菊苑,太古城銀輝座,低層,K,2房,350,5513200,15752,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_15,2026-08-01
-2,湖景花園,太古城康松座,低層,H,3房,284,5568956,19609,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_16,2026-07-30
-2,菊苑,太古城康柏座,低層,B,3房,530,7589070,14319,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_17,2026-08-10
-2,柏苑,太古城康в座,高層,H,3房,650,10057450,15473,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_18,2026-08-13
-2,楓苑,太古城海天花園座,低層,H,1房,900,13710600,15234,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_19,2026-08-18
-2,雍景臺,太古城康柏座,低層,D,1房,600,8910600,14851,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_20,2026-08-23
-2,菊苑,太古城海景座,高層,H,1房,850,13887300,16338,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_21,2026-08-26
-2,竹苑,太古城海景座,低層,G,1房,800,15489600,19362,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_22,2026-08-26
-2,湖景花園,太古城康松座,中層,H,3房,530,7815910,14747,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_23,2026-08-11
-2,竹苑,太古城海景座,中層,J,2房,900,13113000,14570,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_24,2026-08-24
-2,蘭苑,太古城康в座,高層,L,3房,750,14802750,19737,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_25,2026-08-08
-2,雍景臺,太古城銀輝座,低層,C,3房,900,15212700,16903,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_26,2026-08-17
-2,菊苑,太古城銀輝座,中層,K,2房,284,5595368,19702,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_27,2026-07-30
-2,湖景花園,太古城海景座,高層,B,2房,465,7875705,16937,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_28,2026-08-21
-2,楓苑,太古城康山座,低層,H,2房,700,12966800,18524,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_29,2026-08-26
-2,海天花園,太古城康в座,高層,C,3房,550,10872950,19769,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_30,2026-08-20
-2,湖景花園,太古城康柏座,低層,A,1房,600,8695200,14492,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_31,2026-08-01
-2,海天花園,太古城海景座,低層,D,1房,350,5894350,16841,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_32,2026-08-21
-2,菊苑,太古城康山座,中層,J,3房,750,13785000,18380,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_33,2026-08-27
-2,海天花園,太古城銀輝座,高層,C,3房,530,7565750,14275,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_34,2026-08-25
-2,海景花園,太古城銀輝座,低層,K,1房,650,11111750,17095,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_35,2026-08-23
-2,雍景臺,太古城康山座,中層,C,2房,530,9286130,17521,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_36,2026-08-16
-2,海景花園,太古城康柏座,低層,H,3房,900,17854200,19838,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_37,2026-08-01
-2,松苑,太古城康в座,高層,F,3房,284,4579500,16125,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_38,2026-07-29
-2,海景花園,太古城康松座,高層,E,3房,284,5368452,18903,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_39,2026-07-31
-2,雍景臺,太古城銀輝座,低層,A,1房,304,5189888,17072,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_40,2026-08-27
-2,蘭苑,太古城銀輝座,高層,H,2房,850,14121900,16614,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_41,2026-07-31
-2,松苑,太古城銀輝座,低層,D,2房,900,17280900,19201,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_42,2026-08-26
-2,竹苑,太古城康柏座,低層,L,3房,750,12267000,16356,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_43,2026-08-12
-2,菊苑,太古城康柏座,高層,D,1房,650,10916100,16794,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_44,2026-08-11
-2,松苑,太古城康松座,低層,H,3房,850,12263800,14428,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_45,2026-08-02
-2,湖景花園,太古城銀輝座,低層,D,3房,400,5897600,14744,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_46,2026-08-27
-2,海天花園,太古城銀輝座,低層,J,2房,350,5847800,16708,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_47,2026-08-01
-2,海天花園,太古城康в座,中層,K,1房,650,11875500,18270,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_48,2026-08-22
-2,松苑,太古城康山座,中層,B,2房,950,18844200,19836,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_49,2026-08-19
-3,3期,47座,高層,J,1房,550,9582100,17422,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_0,2026-08-26
-3,1期,42座,高層,B,2房,600,8035200,13392,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_1,2026-08-20
-3,2期,47座,低層,D,1房,850,13780200,16212,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_2,2026-08-18
-3,1期,48座,中層,E,3房,465,7212150,15510,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_3,2026-08-11
-3,3期,38座,中層,J,2房,900,11049300,12277,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_4,2026-08-23
-3,1期,49座,低層,G,2房,800,11874400,14843,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_5,2026-08-27
-3,2期,38座,中層,B,1房,850,15017800,17668,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_6,2026-08-15
-3,5期,40座,中層,G,1房,465,8071470,17358,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_7,2026-08-20
-3,1期,47座,高層,K,3房,530,8056000,15200,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_8,2026-08-13
-3,1期,48座,高層,C,1房,650,11103950,17083,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_9,2026-08-27
-3,5期,44座,中層,A,1房,850,12948900,15234,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_10,2026-08-08
-3,5期,40座,中層,L,1房,700,9269400,13242,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_11,2026-08-09
-3,3期,40座,高層,F,3房,700,9325400,13322,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_12,2026-08-19
-3,5期,43座,高層,D,2房,350,4175850,11931,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_13,2026-08-17
-3,4期,39座,中層,K,2房,900,12120300,13467,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_14,2026-08-05
-3,2期,49座,低層,G,1房,800,10824000,13530,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_15,2026-08-09
-3,5期,46座,中層,F,3房,800,12900800,16126,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_16,2026-08-15
-3,4期,38座,中層,A,2房,900,11511900,12791,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_17,2026-08-08
-3,2期,44座,低層,L,3房,450,6215850,13813,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_18,2026-08-23
-3,4期,44座,高層,H,2房,304,3713056,12214,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_19,2026-08-07
-3,2期,49座,高層,J,3房,550,8131200,14784,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_20,2026-08-24
-3,1期,41座,低層,B,2房,850,11502200,13532,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_21,2026-08-11
-3,4期,44座,中層,F,2房,400,6412400,16031,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_22,2026-08-20
-3,2期,49座,低層,G,3房,450,7763400,17252,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_23,2026-08-26
-3,5期,48座,高層,D,3房,900,14868900,16521,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_24,2026-08-20
-3,2期,44座,中層,J,2房,530,6328200,11940,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_25,2026-08-27
-3,4期,45座,高層,J,3房,400,6531600,16329,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_26,2026-07-29
-3,1期,42座,中層,G,3房,304,5329424,17531,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_27,2026-08-08
-3,5期,39座,低層,K,1房,750,11797500,15730,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_28,2026-08-17
-3,1期,45座,高層,D,1房,530,8588120,16204,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_29,2026-08-27
-3,2期,39座,高層,E,2房,530,7762910,14647,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_30,2026-08-02
-3,1期,44座,低層,L,2房,950,14335500,15090,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_31,2026-08-14
-3,3期,49座,高層,G,1房,600,10076400,16794,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_32,2026-08-15
-3,3期,37座,中層,F,1房,850,10314750,12135,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_33,2026-08-23
-3,4期,47座,低層,H,3房,800,13508000,16885,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_34,2026-08-26
-4,3期(翠湖居),2座,低層,H,2房,350,3614100,10326,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_0,2026-08-09
-4,1期(樂湖居),2座,中層,J,3房,950,7773850,8183,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_1,2026-08-23
-4,7期(景湖居),10座,低層,A,3房,465,5405625,11625,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_2,2026-08-03
-4,3期(翠湖居),9座,中層,F,2房,465,4508640,9696,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_3,2026-08-13
-4,5期(麗湖居),15座,中層,B,3房,800,4839200,6049,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_4,2026-08-28
-4,1期(樂湖居),15座,低層,L,3房,750,5445000,7260,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_5,2026-07-29
-4,7期(景湖居),3座,低層,G,2房,900,6534900,7261,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_6,2026-08-12
-4,7期(景湖居),7座,高層,E,2房,800,8018400,10023,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_7,2026-08-13
-4,6期(碧湖居),17座,低層,C,3房,350,3661700,10462,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_8,2026-08-11
-4,1期(樂湖居),15座,低層,C,2房,284,1924668,6777,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_9,2026-08-26
-4,6期(碧湖居),17座,中層,E,1房,800,8174400,10218,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_10,2026-08-10
-4,5期(麗湖居),15座,高層,A,2房,284,2816144,9916,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_11,2026-08-04
-4,1期(樂湖居),4座,中層,J,3房,950,9996850,10523,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_12,2026-08-15
-4,5期(麗湖居),11座,高層,B,1房,650,6966700,10718,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_13,2026-08-23
-4,7期(景湖居),8座,高層,K,2房,450,3533850,7853,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_14,2026-08-23
-4,1期(樂湖居),19座,中層,E,3房,750,7671000,10228,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_15,2026-08-22
-4,6期(碧湖居),18座,高層,J,1房,600,3554400,5924,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_16,2026-08-21
-4,7期(景湖居),7座,低層,L,1房,850,6928350,8151,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_17,2026-08-19
-4,2期(賞湖居),13座,低層,A,3房,600,3957600,6596,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_18,2026-08-06
-4,2期(賞湖居),2座,中層,J,3房,650,6052800,9312,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_19,2026-08-17
-4,5期(麗湖居),5座,高層,L,1房,350,3847900,10994,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_20,2026-08-28
-4,6期(碧湖居),13座,中層,A,2房,550,5152950,9369,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_21,2026-08-24
-4,2期(賞湖居),2座,高層,J,3房,600,5870400,9784,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_22,2026-08-07
-4,2期(賞湖居),16座,低層,B,3房,800,6676000,8345,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_23,2026-08-05
-4,1期(樂湖居),13座,中層,A,1房,400,2344000,5860,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_24,2026-08-05
-4,3期(翠湖居),17座,低層,E,3房,850,8959000,10540,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_25,2026-08-25
-4,3期(翠湖居),12座,中層,G,2房,304,3149440,10360,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_26,2026-08-05
-4,1期(樂湖居),19座,高層,H,1房,700,4678100,6683,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_27,2026-08-07
-4,7期(景湖居),6座,高層,A,1房,465,3747435,8059,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_28,2026-08-12
-4,2期(賞湖居),4座,高層,C,2房,465,3729765,8021,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_29,2026-08-01
-4,7期(景湖居),19座,低層,D,3房,950,10003500,10530,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_30,2026-08-18
-4,6期(碧湖居),7座,中層,D,1房,530,4320030,8151,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_31,2026-08-14
-4,2期(賞湖居),11座,低層,G,2房,304,3036352,9988,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_32,2026-08-09
-4,5期(麗湖居),15座,低層,A,1房,450,3007350,6683,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_33,2026-08-20
-4,5期(麗湖居),19座,中層,C,3房,530,4870700,9190,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_34,2026-08-27
-4,7期(景湖居),18座,中層,A,3房,750,4408500,5878,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_35,2026-08-27
-4,2期(賞湖居),17座,低層,K,2房,350,3454150,9869,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_36,2026-08-19
-4,7期(景湖居),10座,高層,L,1房,900,7052400,7836,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_37,2026-08-16
-4,3期(翠湖居),8座,低層,D,3房,700,4538100,6483,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_38,2026-08-17
-4,2期(賞湖居),12座,低層,F,3房,850,8496600,9996,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_39,2026-08-05
-4,1期(樂湖居),14座,中層,H,1房,800,7481600,9352,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_40,2026-08-27
-4,7期(景湖居),14座,中層,A,2房,304,1820656,5989,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_41,2026-08-18
-4,5期(麗湖居),12座,高層,D,1房,700,7186200,10266,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_42,2026-08-09
-4,1期(樂湖居),17座,中層,L,3房,530,5819930,10981,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_43,2026-08-02
-4,5期(麗湖居),9座,高層,H,2房,550,4061750,7385,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_44,2026-08-02
-5,1期,昇悅居C座,低層,F,2房,530,7409930,13981,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_0,2026-08-05
-5,2期,昇悅居B座,高層,G,3房,950,13511850,14223,東,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_1,2026-08-20
-5,1期,昇悅居C座,中層,C,1房,850,10460950,12307,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_2,2026-08-05
-5,2期,昇悅居A座,低層,G,3房,400,6163600,15409,西北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_3,2026-08-10
-5,1期,昇悅居A座,低層,F,3房,800,10025600,12532,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_4,2026-08-09
-5,1期,昇悅居C座,中層,A,3房,850,10353850,12181,南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_5,2026-08-01
-5,2期,昇悅居A座,中層,C,3房,465,5979900,12860,西北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_6,2026-07-31
-5,2期,昇悅居B座,高層,D,2房,304,4242624,13956,南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_7,2026-08-14
-5,2期,昇悅居C座,高層,K,2房,650,10353200,15928,西北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_8,2026-08-14
-5,2期,昇悅居A座,低層,C,3房,350,3645950,10417,西,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_9,2026-08-24
-5,1期,昇悅居B座,低層,E,2房,465,5960835,12819,東,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_10,2026-07-31
-5,1期,昇悅居B座,中層,H,2房,465,6308655,13567,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_11,2026-08-11
-5,1期,昇悅居A座,低層,B,2房,850,11965450,14077,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_12,2026-08-18
-5,2期,昇悅居A座,高層,K,3房,530,7762380,14646,南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_13,2026-07-31
-5,2期,昇悅居B座,中層,D,3房,350,4913300,14038,東南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_14,2026-08-24
-5,1期,昇悅居A座,高層,K,2房,350,4300100,12286,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_15,2026-08-26
-5,2期,昇悅居A座,中層,C,1房,950,11354400,11952,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_16,2026-07-29
-5,2期,昇悅居A座,低層,L,1房,530,8360750,15775,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_17,2026-08-18
-5,1期,昇悅居C座,中層,D,1房,950,14476100,15238,西北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_18,2026-08-01
-5,2期,昇悅居C座,低層,D,1房,650,10072400,15496,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_19,2026-08-13
-5,2期,昇悅居B座,中層,L,2房,700,7226100,10323,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_20,2026-08-10
-5,1期,昇悅居C座,中層,F,2房,950,11285050,11879,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_21,2026-08-22
-5,1期,昇悅居C座,中層,B,3房,400,6078800,15197,東,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_22,2026-08-07
-5,2期,昇悅居A座,中層,E,2房,700,9174900,13107,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_23,2026-08-21
-5,2期,昇悅居A座,低層,K,2房,900,11263500,12515,東,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_24,2026-08-12
-6,2座,宇晴軒D座,高層,J,2房,304,4203408,13827,東北,centanet,https://hk.centanet.com/findproperty/detail/Casper_0,2026-08-07
-6,1座,宇晴軒D座,中層,F,3房,750,11395500,15194,東南,centanet,https://hk.centanet.com/findproperty/detail/Casper_1,2026-08-12
-6,3座,宇晴軒C座,中層,C,3房,450,4678650,10397,北,centanet,https://hk.centanet.com/findproperty/detail/Casper_2,2026-08-17
-6,3座,宇晴軒D座,高層,G,2房,600,6161400,10269,西,centanet,https://hk.centanet.com/findproperty/detail/Casper_3,2026-08-06
-6,3座,宇晴軒D座,中層,K,1房,284,3300932,11623,東,centanet,https://hk.centanet.com/findproperty/detail/Casper_4,2026-08-16
-6,3座,宇晴軒A座,中層,G,3房,350,4097800,11708,東,centanet,https://hk.centanet.com/findproperty/detail/Casper_5,2026-08-15
-6,2座,宇晴軒C座,中層,B,2房,530,7205880,13596,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_6,2026-08-19
-6,2座,宇晴軒C座,低層,H,1房,284,4380132,15423,東南,centanet,https://hk.centanet.com/findproperty/detail/Casper_7,2026-08-16
-6,3座,宇晴軒D座,低層,A,2房,950,12869650,13547,西南,centanet,https://hk.centanet.com/findproperty/detail/Casper_8,2026-08-06
-6,2座,宇晴軒A座,低層,C,3房,650,9776650,15041,南,centanet,https://hk.centanet.com/findproperty/detail/Casper_9,2026-08-22
-6,2座,宇晴軒A座,低層,D,1房,465,4850415,10431,西南,centanet,https://hk.centanet.com/findproperty/detail/Casper_10,2026-08-25
-6,1座,宇晴軒D座,低層,D,2房,530,7341560,13852,西南,centanet,https://hk.centanet.com/findproperty/detail/Casper_11,2026-08-03
-6,3座,宇晴軒B座,高層,B,1房,900,12088800,13432,東南,centanet,https://hk.centanet.com/findproperty/detail/Casper_12,2026-08-08
-6,1座,宇晴軒B座,低層,F,3房,350,4840500,13830,東,centanet,https://hk.centanet.com/findproperty/detail/Casper_13,2026-08-03
-6,3座,宇晴軒D座,高層,A,3房,465,5195445,11173,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_14,2026-08-19
-6,2座,宇晴軒B座,中層,F,2房,400,5979600,14949,東,centanet,https://hk.centanet.com/findproperty/detail/Casper_15,2026-08-07
-6,2座,宇晴軒C座,低層,K,1房,530,7658500,14450,西,centanet,https://hk.centanet.com/findproperty/detail/Casper_16,2026-08-07
-6,2座,宇晴軒D座,中層,C,3房,800,8251200,10314,東北,centanet,https://hk.centanet.com/findproperty/detail/Casper_17,2026-08-26
-6,1座,宇晴軒D座,中層,H,2房,284,2826652,9953,東北,centanet,https://hk.centanet.com/findproperty/detail/Casper_18,2026-08-18
-6,3座,宇晴軒B座,高層,A,3房,850,11067850,13021,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_19,2026-07-31
-7,1期,泓景臺A座,中層,D,3房,530,5984760,11292,南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_0,2026-08-25
-7,2期,泓景臺C座,中層,C,1房,750,10761000,14348,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_1,2026-08-08
-7,1期,泓景臺C座,高層,F,3房,530,7707790,14543,西北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_2,2026-08-05
-7,2期,泓景臺A座,中層,D,1房,400,4290800,10727,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_3,2026-08-04
-7,2期,泓景臺B座,中層,J,1房,400,4024000,10060,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_4,2026-08-11
-7,2期,泓景臺A座,中層,F,3房,400,5111200,12778,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_5,2026-08-27
-7,2期,泓景臺B座,低層,B,1房,400,3976000,9940,西南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_6,2026-08-01
-7,1期,泓景臺B座,高層,B,3房,800,11919200,14899,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_7,2026-08-21
-7,2期,泓景臺C座,中層,K,1房,550,6178150,11233,西南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_8,2026-08-02
-7,2期,泓景臺C座,中層,B,3房,450,5886900,13082,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_9,2026-08-27
-7,1期,泓景臺A座,高層,J,2房,750,10271250,13695,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_10,2026-08-24
-7,2期,泓景臺A座,高層,L,1房,530,5559170,10489,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_11,2026-08-13
-7,2期,泓景臺B座,中層,H,3房,465,7032660,15124,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_12,2026-08-02
-7,2期,泓景臺A座,高層,C,2房,600,6136800,10228,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_13,2026-08-03
-7,1期,泓景臺A座,中層,L,3房,650,8491600,13064,西,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_14,2026-08-07
-7,2期,泓景臺B座,中層,G,3房,650,9709050,14937,東南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_15,2026-08-14
-7,1期,泓景臺C座,低層,K,3房,550,7982150,14513,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_16,2026-08-22
-7,1期,泓景臺A座,高層,F,3房,284,3039084,10701,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_17,2026-08-11
-7,1期,泓景臺B座,高層,C,1房,700,6848800,9784,南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_18,2026-08-27
-7,2期,泓景臺B座,高層,E,3房,650,6189950,9523,西南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_19,2026-08-11
-7,2期,泓景臺B座,低層,D,3房,950,9804950,10321,南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_20,2026-08-05
-7,2期,泓景臺A座,中層,G,1房,284,2943944,10366,南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_21,2026-08-05
-8,3座,碧海藍天B座,高層,H,3房,850,8750750,10295,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_0,2026-08-10
-8,2座,碧海藍天C座,中層,G,3房,900,9869400,10966,東南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_1,2026-08-09
-8,2座,碧海藍天D座,高層,F,3房,450,4145400,9212,東,centanet,https://hk.centanet.com/findproperty/detail/Liberté_2,2026-08-17
-8,3座,碧海藍天D座,高層,K,1房,700,10279500,14685,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_3,2026-08-08
-8,2座,碧海藍天B座,高層,D,3房,650,9459450,14553,西,centanet,https://hk.centanet.com/findproperty/detail/Liberté_4,2026-08-08
-8,3座,碧海藍天A座,中層,B,3房,530,7580590,14303,西,centanet,https://hk.centanet.com/findproperty/detail/Liberté_5,2026-08-25
-8,5座,碧海藍天D座,低層,K,3房,900,10268100,11409,東南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_6,2026-08-01
-8,1座,碧海藍天D座,高層,E,3房,465,4849485,10429,西北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_7,2026-08-28
-8,5座,碧海藍天A座,高層,H,2房,650,7033000,10820,西南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_8,2026-07-30
-8,2座,碧海藍天D座,低層,J,1房,850,10559550,12423,西北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_9,2026-08-21
-8,2座,碧海藍天A座,中層,F,2房,950,11606150,12217,西南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_10,2026-08-23
-8,3座,碧海藍天C座,高層,B,1房,400,4038000,10095,南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_11,2026-08-16
-8,2座,碧海藍天D座,高層,L,3房,400,5268800,13172,西,centanet,https://hk.centanet.com/findproperty/detail/Liberté_12,2026-08-18
-8,5座,碧海藍天D座,高層,L,2房,750,7059000,9412,北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_13,2026-08-05
-8,5座,碧海藍天A座,中層,G,2房,950,13462450,14171,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_14,2026-08-02
-8,3座,碧海藍天D座,低層,G,3房,400,5273600,13184,南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_15,2026-08-27
-8,1座,碧海藍天A座,低層,A,3房,950,13509950,14221,北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_16,2026-08-06
-8,1座,碧海藍天A座,低層,A,1房,530,7699840,14528,西,centanet,https://hk.centanet.com/findproperty/detail/Liberté_17,2026-08-06
+1,7期,百老匯街107號,低層,L,2房,900,7075800,7862,東北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_0,2026-08-09
+1,3期,百老匯街129號,中層,C,3房,900,9917100,11019,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_1,2026-08-12
+1,4期,百老匯街81號,中層,F,1房,600,7766400,12944,東北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_2,2026-08-27
+1,6期,百老匯街71號,低層,J,1房,650,5500950,8463,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_3,2026-08-27
+1,3期,百老匯街87號,中層,L,3房,750,8546250,11395,西,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_4,2026-08-27
+1,2期,百老匯街39號,中層,D,1房,450,6186600,13748,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_5,2026-07-29
+1,7期,百老匯街117號,低層,K,2房,400,4450400,11126,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_6,2026-08-08
+1,4期,百老匯街29號,中層,C,3房,400,4804400,12011,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_7,2026-08-03
+1,6期,百老匯街43號,中層,B,2房,550,4311450,7839,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_8,2026-08-20
+1,3期,百老匯街43號,中層,J,3房,600,5599200,9332,西,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_9,2026-08-23
+1,4期,百老匯街33號,中層,H,2房,700,7432600,10618,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_10,2026-08-16
+1,4期,百老匯街107號,中層,D,3房,550,5889950,10709,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_11,2026-08-23
+1,5期,百老匯街17號,中層,F,2房,530,4934300,9310,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_12,2026-08-20
+1,6期,百老匯街57號,高層,B,2房,900,11547900,12831,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_13,2026-08-01
+1,6期,百老匯街61號,低層,H,2房,550,4781700,8694,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_14,2026-08-19
+1,7期,百老匯街87號,高層,J,3房,284,2913556,10259,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_15,2026-08-11
+1,2期,百老匯街113號,低層,K,2房,465,5719035,12299,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_16,2026-08-24
+1,8期,百老匯街29號,高層,B,2房,950,11689750,12305,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_17,2026-08-15
+1,2期,百老匯街117號,中層,D,1房,900,11887200,13208,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_18,2026-08-04
+1,6期,百老匯街119號,低層,F,2房,550,7077400,12868,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_19,2026-08-21
+1,5期,百老匯街115號,中層,L,1房,900,11498400,12776,東北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_20,2026-08-21
+1,6期,百老匯街105號,中層,C,3房,304,2840576,9344,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_21,2026-08-22
+1,6期,百老匯街99號,中層,F,3房,900,9492300,10547,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_22,2026-08-02
+1,5期,百老匯街87號,中層,H,3房,400,4127600,10319,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_23,2026-08-11
+1,3期,百老匯街87號,中層,J,2房,400,4877200,12193,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_24,2026-08-03
+1,6期,百老匯街21號,低層,G,1房,304,2511344,8261,北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_25,2026-08-18
+1,2期,百老匯街29號,低層,L,2房,800,9710400,12138,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_26,2026-08-04
+1,6期,百老匯街69號,高層,F,1房,650,7628400,11736,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_27,2026-07-29
+1,5期,百老匯街127號,中層,C,2房,550,5083650,9243,東北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_28,2026-08-27
+1,3期,百老匯街49號,高層,L,1房,304,2423184,7971,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_29,2026-08-09
+1,7期,百老匯街87號,低層,E,1房,750,7251750,9669,西,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_30,2026-08-26
+1,4期,百老匯街111號,低層,B,3房,304,3160080,10395,東南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_31,2026-07-30
+1,6期,百老匯街71號,低層,G,1房,700,7746900,11067,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_32,2026-08-17
+1,6期,百老匯街63號,高層,C,1房,465,5818545,12513,西南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_33,2026-08-22
+1,7期,百老匯街65號,高層,H,3房,465,4444935,9559,東北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_34,2026-08-16
+1,2期,百老匯街45號,高層,C,2房,284,3547728,12492,西,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_35,2026-08-18
+1,6期,百老匯街51號,中層,B,2房,350,4145050,11843,東,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_36,2026-08-25
+1,3期,百老匯街73號,低層,F,2房,700,7680400,10972,西北,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_37,2026-08-02
+1,1期,百老匯街103號,高層,C,2房,650,8687900,13366,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_38,2026-08-24
+1,5期,百老匯街117號,低層,L,3房,550,7319400,13308,南,centanet,https://hk.centanet.com/findproperty/detail/Mei Foo Sun Chuen_39,2026-08-08
+2,海天半島,太古城康山座,低層,F,2房,530,7347920,13864,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_0,2026-07-29
+2,松苑,太古城康山座,低層,H,2房,600,10307400,17179,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_1,2026-08-17
+2,蘭苑,太古城康柏座,中層,C,3房,900,11344500,12605,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_2,2026-08-18
+2,海天半島,太古城康柏座,低層,A,1房,600,7997400,13329,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_3,2026-08-13
+2,海景花園,太古城康в座,低層,B,2房,900,14829300,16477,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_4,2026-08-05
+2,湖景花園,太古城康в座,高層,C,2房,304,4701360,15465,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_5,2026-08-17
+2,柏苑,太古城銀輝座,低層,K,2房,530,6757500,12750,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_6,2026-08-01
+2,海天花園,太古城銀輝座,低層,L,2房,350,4893350,13981,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_7,2026-08-18
+2,松苑,太古城海天花園座,中層,C,1房,650,10862150,16711,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_8,2026-08-16
+2,柏苑,太古城康山座,中層,B,1房,800,13059200,16324,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_9,2026-08-08
+2,海景花園,太古城銀輝座,中層,D,1房,400,6159600,15399,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_10,2026-08-05
+2,海天半島,太古城康柏座,高層,H,3房,350,5629400,16084,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_11,2026-07-29
+2,竹苑,太古城康山座,低層,J,1房,550,9771850,17767,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_12,2026-08-18
+2,雍景臺,太古城康山座,低層,A,2房,650,10463700,16098,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_13,2026-08-11
+2,竹苑,太古城康в座,中層,H,1房,650,11082500,17050,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_14,2026-08-26
+2,楓苑,太古城康山座,低層,F,1房,465,6713205,14437,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_15,2026-08-08
+2,松苑,太古城海景座,高層,L,1房,465,7613910,16374,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_16,2026-08-19
+2,松苑,太古城銀輝座,中層,E,1房,550,9065650,16483,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_17,2026-08-03
+2,蘭苑,太古城海天花園座,低層,A,2房,450,7656750,17015,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_18,2026-08-09
+2,雍景臺,太古城康柏座,低層,K,1房,650,11315200,17408,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_19,2026-08-10
+2,松苑,太古城康柏座,高層,B,1房,450,5701050,12669,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_20,2026-08-26
+2,海天半島,太古城康松座,中層,G,3房,530,8385660,15822,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_21,2026-08-03
+2,楓苑,太古城康山座,低層,E,1房,304,5168608,17002,西北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_22,2026-08-03
+2,海天花園,太古城海景座,高層,B,3房,850,15489550,18223,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_23,2026-08-11
+2,湖景花園,太古城康в座,高層,L,3房,304,5236096,17224,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_24,2026-08-26
+2,蘭苑,太古城康松座,低層,D,1房,700,9869300,14099,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_25,2026-08-12
+2,菊苑,太古城康松座,高層,J,3房,600,10131000,16885,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_26,2026-08-16
+2,海天花園,太古城康山座,中層,A,3房,650,9479600,14584,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_27,2026-08-27
+2,松苑,太古城康в座,中層,G,2房,950,15336800,16144,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_28,2026-08-16
+2,海天花園,太古城康в座,中層,A,2房,284,4229612,14893,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_29,2026-08-17
+2,柏苑,太古城銀輝座,中層,C,1房,600,10611000,17685,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_30,2026-08-04
+2,海天花園,太古城康山座,中層,G,3房,950,13376950,14081,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_31,2026-08-10
+2,海景花園,太古城銀輝座,高層,D,1房,550,8141100,14802,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_32,2026-07-30
+2,雍景臺,太古城康松座,高層,F,3房,400,6434000,16085,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_33,2026-08-16
+2,竹苑,太古城銀輝座,中層,C,3房,800,10952800,13691,東,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_34,2026-07-29
+2,松苑,太古城海景座,中層,K,3房,950,14423850,15183,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_35,2026-08-17
+2,柏苑,太古城海景座,低層,H,3房,350,6310850,18031,北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_36,2026-08-16
+2,雍景臺,太古城康柏座,高層,G,2房,650,11514100,17714,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_37,2026-08-04
+2,竹苑,太古城康松座,高層,L,3房,304,4053536,13334,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_38,2026-08-08
+2,松苑,太古城海景座,中層,F,2房,900,14901300,16557,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_39,2026-08-10
+2,松苑,太古城海天花園座,中層,B,2房,550,8987550,16341,南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_40,2026-08-24
+2,楓苑,太古城康柏座,中層,C,1房,650,10038600,15444,西南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_41,2026-08-03
+2,松苑,太古城海景座,高層,B,3房,950,16600300,17474,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_42,2026-08-28
+2,海天花園,太古城康松座,中層,F,3房,284,4662428,16417,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_43,2026-08-08
+2,楓苑,太古城康柏座,高層,L,3房,350,5815600,16616,西,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_44,2026-08-18
+2,湖景花園,太古城康柏座,高層,D,2房,650,9534850,14669,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_45,2026-07-29
+2,海天花園,太古城海天花園座,低層,A,2房,750,13092000,17456,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_46,2026-08-25
+2,海天半島,太古城海天花園座,中層,K,2房,304,4935744,16236,東北,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_47,2026-08-22
+2,海天花園,太古城銀輝座,高層,H,3房,284,5126768,18052,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_48,2026-08-13
+2,柏苑,太古城康松座,中層,C,1房,350,5516700,15762,東南,centanet,https://hk.centanet.com/findproperty/detail/Taikoo Shing_49,2026-08-18
+3,3期,40座,中層,L,2房,950,11463650,12067,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_0,2026-08-18
+3,2期,44座,高層,E,3房,800,9781600,12227,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_1,2026-08-16
+3,2期,45座,低層,J,2房,350,4410700,12602,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_2,2026-08-06
+3,3期,45座,中層,G,1房,600,6479400,10799,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_3,2026-08-07
+3,5期,39座,低層,H,3房,400,5057200,12643,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_4,2026-08-08
+3,1期,47座,低層,B,3房,700,8188600,11698,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_5,2026-08-02
+3,2期,45座,中層,J,1房,750,7605000,10140,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_6,2026-08-15
+3,3期,39座,高層,F,1房,900,8478000,9420,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_7,2026-08-21
+3,3期,43座,中層,K,2房,400,3494000,8735,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_8,2026-08-08
+3,1期,47座,中層,G,2房,465,6362130,13682,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_9,2026-08-03
+3,4期,47座,低層,C,1房,304,2693744,8861,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_10,2026-08-26
+3,4期,38座,低層,J,1房,700,7733600,11048,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_11,2026-08-18
+3,1期,40座,高層,G,1房,284,3845644,13541,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_12,2026-08-22
+3,5期,43座,中層,J,2房,950,10115600,10648,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_13,2026-08-09
+3,3期,45座,中層,B,1房,400,4986000,12465,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_14,2026-08-23
+3,1期,41座,中層,G,1房,900,11032200,12258,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_15,2026-07-30
+3,3期,47座,低層,J,2房,700,9220400,13172,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_16,2026-08-10
+3,2期,45座,中層,B,3房,900,12299400,13666,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_17,2026-08-14
+3,5期,42座,高層,L,1房,465,4830420,10388,南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_18,2026-08-09
+3,2期,37座,中層,G,1房,900,11624400,12916,東北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_19,2026-08-27
+3,1期,41座,高層,J,3房,304,3993952,13138,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_20,2026-08-08
+3,4期,45座,高層,D,2房,284,3246120,11430,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_21,2026-08-19
+3,5期,44座,中層,D,1房,900,7668000,8520,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_22,2026-08-06
+3,1期,41座,中層,J,3房,750,7975500,10634,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_23,2026-08-19
+3,5期,41座,中層,D,3房,350,3683400,10524,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_24,2026-08-08
+3,1期,40座,低層,D,2房,800,7006400,8758,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_25,2026-08-13
+3,1期,37座,高層,D,3房,284,3872624,13636,西,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_26,2026-08-16
+3,2期,48座,低層,L,2房,750,7196250,9595,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_27,2026-08-11
+3,2期,47座,低層,H,2房,530,6673230,12591,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_28,2026-08-28
+3,1期,42座,低層,H,3房,550,5838800,10616,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_29,2026-08-03
+3,4期,49座,低層,H,2房,284,3893072,13708,東,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_30,2026-08-25
+3,3期,46座,低層,K,2房,304,2652704,8726,北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_31,2026-08-01
+3,5期,49座,高層,F,1房,850,9788600,11516,西南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_32,2026-08-10
+3,1期,39座,中層,L,3房,284,3593452,12653,東南,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_33,2026-08-02
+3,1期,38座,低層,F,2房,550,6629700,12054,西北,centanet,https://hk.centanet.com/findproperty/detail/Sha Tin First City_34,2026-08-24
+4,7期(景湖居),13座,低層,L,2房,304,2144416,7054,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_0,2026-08-26
+4,3期(翠湖居),17座,低層,C,2房,700,5630100,8043,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_1,2026-08-21
+4,7期(景湖居),12座,高層,L,1房,530,4617890,8713,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_2,2026-08-08
+4,7期(景湖居),6座,高層,K,1房,950,6298500,6630,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_3,2026-08-28
+4,1期(樂湖居),11座,中層,J,2房,350,1984850,5671,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_4,2026-08-28
+4,1期(樂湖居),13座,中層,F,3房,450,2949300,6554,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_5,2026-08-17
+4,5期(麗湖居),2座,中層,C,3房,950,5542300,5834,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_6,2026-08-17
+4,7期(景湖居),10座,低層,E,3房,950,8759000,9220,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_7,2026-08-27
+4,3期(翠湖居),1座,低層,E,1房,350,2724750,7785,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_8,2026-08-27
+4,2期(賞湖居),3座,高層,K,1房,550,4286150,7793,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_9,2026-08-17
+4,1期(樂湖居),6座,高層,B,1房,600,6237000,10395,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_10,2026-08-02
+4,2期(賞湖居),15座,高層,J,2房,650,3808350,5859,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_11,2026-07-29
+4,1期(樂湖居),9座,中層,F,2房,650,6602050,10157,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_12,2026-08-26
+4,6期(碧湖居),13座,中層,J,3房,850,5927900,6974,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_13,2026-08-03
+4,2期(賞湖居),7座,中層,J,2房,950,7364400,7752,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_14,2026-07-30
+4,2期(賞湖居),9座,高層,F,1房,700,7210700,10301,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_15,2026-08-20
+4,6期(碧湖居),1座,低層,D,1房,950,6699400,7052,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_16,2026-08-08
+4,3期(翠湖居),7座,中層,C,2房,550,3890700,7074,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_17,2026-08-14
+4,7期(景湖居),18座,低層,C,1房,400,2560800,6402,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_18,2026-08-03
+4,7期(景湖居),12座,低層,E,2房,400,4329600,10824,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_19,2026-08-13
+4,5期(麗湖居),13座,中層,L,3房,284,2943660,10365,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_20,2026-08-19
+4,7期(景湖居),8座,低層,E,2房,450,2415150,5367,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_21,2026-08-12
+4,2期(賞湖居),17座,中層,J,2房,700,4363800,6234,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_22,2026-08-16
+4,3期(翠湖居),19座,中層,H,2房,530,3192190,6023,東南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_23,2026-08-08
+4,3期(翠湖居),2座,高層,L,3房,400,4177200,10443,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_24,2026-08-15
+4,6期(碧湖居),2座,高層,K,1房,465,3498660,7524,北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_25,2026-08-26
+4,6期(碧湖居),3座,低層,A,3房,304,3204768,10542,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_26,2026-08-23
+4,2期(賞湖居),12座,中層,A,2房,465,3418215,7351,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_27,2026-08-17
+4,6期(碧湖居),19座,低層,G,2房,284,2378500,8375,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_28,2026-08-18
+4,7期(景湖居),18座,高層,E,1房,950,10305600,10848,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_29,2026-08-22
+4,7期(景湖居),4座,高層,H,1房,900,7798500,8665,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_30,2026-08-21
+4,2期(賞湖居),4座,高層,F,2房,700,6134100,8763,南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_31,2026-08-05
+4,6期(碧湖居),4座,低層,C,3房,800,8246400,10308,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_32,2026-08-03
+4,5期(麗湖居),11座,高層,B,3房,465,3969240,8536,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_33,2026-08-26
+4,6期(碧湖居),18座,中層,J,3房,700,4357500,6225,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_34,2026-08-19
+4,7期(景湖居),1座,低層,B,2房,650,3365050,5177,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_35,2026-08-20
+4,1期(樂湖居),19座,高層,K,2房,284,2707372,9533,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_36,2026-08-01
+4,6期(碧湖居),10座,中層,E,3房,850,8833200,10392,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_37,2026-08-13
+4,3期(翠湖居),10座,低層,L,3房,700,3691800,5274,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_38,2026-08-02
+4,2期(賞湖居),11座,低層,K,1房,950,9245400,9732,西北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_39,2026-08-12
+4,2期(賞湖居),17座,高層,D,2房,650,6503900,10006,東,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_40,2026-08-08
+4,3期(翠湖居),19座,低層,D,1房,750,7235250,9647,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_41,2026-08-15
+4,7期(景湖居),18座,低層,H,2房,304,3265872,10743,西,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_42,2026-08-13
+4,1期(樂湖居),8座,低層,L,3房,530,5659340,10678,東北,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_43,2026-08-17
+4,6期(碧湖居),12座,高層,H,1房,550,3237300,5886,西南,centanet,https://hk.centanet.com/findproperty/detail/Kingswood Villas_44,2026-08-07
+5,1期,昇悅居C座,高層,L,1房,304,5390224,17731,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_0,2026-08-03
+5,2期,昇悅居C座,中層,G,3房,550,9100850,16547,南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_1,2026-08-09
+5,1期,昇悅居C座,低層,H,1房,465,7096365,15261,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_2,2026-08-20
+5,2期,昇悅居A座,高層,A,2房,450,8307000,18460,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_3,2026-08-10
+5,2期,昇悅居A座,中層,D,2房,600,8544600,14241,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_4,2026-08-14
+5,1期,昇悅居C座,高層,K,2房,284,3814688,13432,西,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_5,2026-08-12
+5,2期,昇悅居C座,中層,K,2房,600,8672400,14454,西北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_6,2026-08-03
+5,1期,昇悅居A座,高層,F,1房,530,8119070,15319,西北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_7,2026-08-11
+5,1期,昇悅居C座,高層,E,3房,350,4669700,13342,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_8,2026-08-19
+5,1期,昇悅居A座,低層,J,2房,800,11576800,14471,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_9,2026-08-13
+5,1期,昇悅居B座,中層,E,2房,950,17838150,18777,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_10,2026-08-07
+5,2期,昇悅居A座,中層,D,3房,304,5022688,16522,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_11,2026-08-16
+5,1期,昇悅居A座,低層,D,2房,750,10592250,14123,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_12,2026-08-17
+5,2期,昇悅居C座,高層,J,2房,284,4579784,16126,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_13,2026-08-20
+5,1期,昇悅居B座,高層,A,3房,450,8520300,18934,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_14,2026-08-28
+5,2期,昇悅居A座,中層,F,3房,900,17345700,19273,東北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_15,2026-07-30
+5,2期,昇悅居B座,高層,F,1房,304,4716864,15516,東,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_16,2026-08-22
+5,2期,昇悅居A座,高層,A,1房,284,5240652,18453,南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_17,2026-08-26
+5,1期,昇悅居B座,中層,A,1房,800,14733600,18417,東,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_18,2026-08-15
+5,2期,昇悅居B座,高層,E,1房,750,12967500,17290,西,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_19,2026-08-03
+5,1期,昇悅居A座,低層,E,1房,400,5580400,13951,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_20,2026-08-13
+5,1期,昇悅居B座,低層,F,3房,284,3997300,14075,北,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_21,2026-08-10
+5,2期,昇悅居B座,高層,J,1房,450,6189300,13754,東南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_22,2026-08-25
+5,2期,昇悅居A座,低層,H,3房,850,12443150,14639,西南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_23,2026-08-05
+5,1期,昇悅居B座,中層,C,2房,750,13520250,18027,東南,centanet,https://hk.centanet.com/findproperty/detail/Harmony Place_24,2026-08-22
+6,2座,宇晴軒A座,中層,E,1房,400,7490800,18727,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_0,2026-08-08
+6,2座,宇晴軒D座,中層,H,3房,350,5125750,14645,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_1,2026-08-05
+6,5座,宇晴軒B座,中層,K,1房,750,10892250,14523,南,centanet,https://hk.centanet.com/findproperty/detail/Casper_2,2026-08-24
+6,2座,宇晴軒A座,中層,J,3房,465,8348145,17953,南,centanet,https://hk.centanet.com/findproperty/detail/Casper_3,2026-08-04
+6,3座,宇晴軒D座,中層,E,3房,750,11817750,15757,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_4,2026-08-02
+6,2座,宇晴軒B座,低層,B,3房,950,16056900,16902,西南,centanet,https://hk.centanet.com/findproperty/detail/Casper_5,2026-08-17
+6,5座,宇晴軒C座,低層,D,1房,400,8011600,20029,北,centanet,https://hk.centanet.com/findproperty/detail/Casper_6,2026-07-30
+6,1座,宇晴軒A座,高層,G,3房,304,4643904,15276,西,centanet,https://hk.centanet.com/findproperty/detail/Casper_7,2026-08-12
+6,3座,宇晴軒A座,高層,F,1房,650,10866700,16718,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_8,2026-08-18
+6,1座,宇晴軒A座,高層,L,2房,304,6202512,20403,東南,centanet,https://hk.centanet.com/findproperty/detail/Casper_9,2026-08-01
+6,1座,宇晴軒B座,低層,C,3房,750,14018250,18691,東南,centanet,https://hk.centanet.com/findproperty/detail/Casper_10,2026-08-23
+6,3座,宇晴軒B座,高層,L,3房,600,10309200,17182,東南,centanet,https://hk.centanet.com/findproperty/detail/Casper_11,2026-08-05
+6,2座,宇晴軒B座,中層,D,1房,900,13050000,14500,西,centanet,https://hk.centanet.com/findproperty/detail/Casper_12,2026-08-06
+6,3座,宇晴軒C座,中層,E,3房,650,13252200,20388,東北,centanet,https://hk.centanet.com/findproperty/detail/Casper_13,2026-08-20
+6,3座,宇晴軒B座,高層,D,3房,350,6034000,17240,東,centanet,https://hk.centanet.com/findproperty/detail/Casper_14,2026-08-06
+6,3座,宇晴軒B座,中層,A,3房,650,10026250,15425,西南,centanet,https://hk.centanet.com/findproperty/detail/Casper_15,2026-08-15
+6,2座,宇晴軒A座,高層,G,1房,304,4907472,16143,東北,centanet,https://hk.centanet.com/findproperty/detail/Casper_16,2026-08-01
+6,3座,宇晴軒A座,中層,K,1房,465,8218410,17674,南,centanet,https://hk.centanet.com/findproperty/detail/Casper_17,2026-08-15
+6,3座,宇晴軒C座,中層,K,1房,800,14064000,17580,西,centanet,https://hk.centanet.com/findproperty/detail/Casper_18,2026-08-11
+6,1座,宇晴軒C座,中層,H,3房,450,6765750,15035,西北,centanet,https://hk.centanet.com/findproperty/detail/Casper_19,2026-08-14
+7,2期,泓景臺C座,中層,F,1房,400,5135600,12839,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_0,2026-07-31
+7,2期,泓景臺C座,高層,K,1房,650,8684650,13361,東南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_1,2026-08-26
+7,1期,泓景臺B座,中層,A,1房,600,10632600,17721,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_2,2026-08-08
+7,2期,泓景臺A座,高層,K,1房,650,9643400,14836,南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_3,2026-08-11
+7,2期,泓景臺B座,中層,A,1房,900,12161700,13513,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_4,2026-08-24
+7,1期,泓景臺C座,低層,F,2房,284,3474456,12234,東北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_5,2026-08-20
+7,2期,泓景臺B座,高層,L,1房,800,13167200,16459,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_6,2026-08-10
+7,2期,泓景臺A座,高層,C,3房,550,8727400,15868,西北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_7,2026-08-17
+7,1期,泓景臺B座,低層,E,3房,850,13688400,16104,西南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_8,2026-08-10
+7,1期,泓景臺B座,低層,J,2房,650,11337950,17443,東南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_9,2026-08-25
+7,2期,泓景臺C座,低層,B,1房,284,4752740,16735,西北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_10,2026-08-02
+7,1期,泓景臺B座,低層,B,1房,900,13039200,14488,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_11,2026-08-07
+7,2期,泓景臺A座,低層,L,3房,465,7467435,16059,西北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_12,2026-07-29
+7,2期,泓景臺A座,高層,D,3房,800,10288800,12861,南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_13,2026-08-17
+7,2期,泓景臺B座,中層,J,3房,550,6791400,12348,東,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_14,2026-08-06
+7,1期,泓景臺B座,低層,K,2房,550,6681950,12149,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_15,2026-08-10
+7,1期,泓景臺A座,中層,B,2房,950,16235500,17090,西北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_16,2026-08-11
+7,2期,泓景臺A座,低層,H,3房,600,10321200,17202,西南,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_17,2026-08-15
+7,2期,泓景臺B座,低層,H,1房,450,6570900,14602,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_18,2026-08-25
+7,2期,泓景臺B座,高層,B,1房,750,10120500,13494,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_19,2026-08-25
+7,1期,泓景臺B座,低層,J,2房,400,4986000,12465,西北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_20,2026-08-11
+7,2期,泓景臺C座,高層,H,2房,650,11393200,17528,北,centanet,https://hk.centanet.com/findproperty/detail/Cosmopolitan_21,2026-08-02
+8,2座,碧海藍天D座,低層,J,3房,284,4872304,17156,東南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_0,2026-08-01
+8,3座,碧海藍天B座,中層,L,2房,450,6481800,14404,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_1,2026-08-26
+8,5座,碧海藍天D座,高層,L,2房,550,8970500,16310,西,centanet,https://hk.centanet.com/findproperty/detail/Liberté_2,2026-08-02
+8,1座,碧海藍天D座,低層,K,2房,350,6105400,17444,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_3,2026-08-02
+8,2座,碧海藍天C座,中層,E,3房,350,6154750,17585,東,centanet,https://hk.centanet.com/findproperty/detail/Liberté_4,2026-08-11
+8,1座,碧海藍天C座,中層,J,3房,900,15994800,17772,西北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_5,2026-08-21
+8,2座,碧海藍天D座,低層,J,2房,350,6924750,19785,東,centanet,https://hk.centanet.com/findproperty/detail/Liberté_6,2026-08-10
+8,5座,碧海藍天A座,中層,E,1房,450,7577550,16839,西,centanet,https://hk.centanet.com/findproperty/detail/Liberté_7,2026-08-24
+8,2座,碧海藍天D座,中層,J,3房,350,6858250,19595,南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_8,2026-08-18
+8,3座,碧海藍天B座,中層,C,1房,304,4981040,16385,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_9,2026-08-13
+8,3座,碧海藍天D座,高層,J,1房,750,14533500,19378,東,centanet,https://hk.centanet.com/findproperty/detail/Liberté_10,2026-07-31
+8,1座,碧海藍天D座,中層,C,3房,600,11088600,18481,西南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_11,2026-08-22
+8,2座,碧海藍天A座,中層,D,3房,400,5914400,14786,北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_12,2026-07-31
+8,1座,碧海藍天B座,低層,J,3房,450,6718050,14929,東南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_13,2026-08-15
+8,3座,碧海藍天B座,低層,A,1房,700,13418300,19169,東北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_14,2026-08-26
+8,5座,碧海藍天A座,低層,E,3房,850,13321200,15672,北,centanet,https://hk.centanet.com/findproperty/detail/Liberté_15,2026-08-25
+8,5座,碧海藍天D座,高層,L,1房,450,8776800,19504,西南,centanet,https://hk.centanet.com/findproperty/detail/Liberté_16,2026-08-13
+8,5座,碧海藍天B座,中層,J,1房,465,9273960,19944,東,centanet,https://hk.centanet.com/findproperty/detail/Liberté_17,2026-07-29

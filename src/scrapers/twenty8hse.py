@@ -7,14 +7,14 @@ from datetime import datetime, timedelta
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 
 ESTATES = {
-    1: {"name": "美孚新邨", "avg_psf": 10687},
-    2: {"name": "太古城", "avg_psf": 16865},
-    3: {"name": "沙田第一城", "avg_psf": 14692},
-    4: {"name": "嘉湖山莊", "avg_psf": 8639},
-    5: {"name": "昇悅居", "avg_psf": 13200},
-    6: {"name": "宇晴軒", "avg_psf": 12800},
-    7: {"name": "泓景臺", "avg_psf": 12500},
-    8: {"name": "碧海藍天", "avg_psf": 11800},
+    1: {"name": "美孚新邨", "avg_psf": 10777},
+    2: {"name": "太古城", "avg_psf": 15500},
+    3: {"name": "沙田第一城", "avg_psf": 11500},
+    4: {"name": "嘉湖山莊", "avg_psf": 8146},
+    5: {"name": "昇悅居", "avg_psf": 16300},
+    6: {"name": "宇晴軒", "avg_psf": 17430},
+    7: {"name": "泓景臺", "avg_psf": 14883},
+    8: {"name": "碧海藍天", "avg_psf": 17158},
 }
 
 FLOORS = ["低層", "中層", "高層"]

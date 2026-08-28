@@ -8,14 +8,14 @@ from datetime import datetime, timedelta
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 
 ESTATES = {
-    1: {"name": "美孚新邨", "name_en": "Mei Foo Sun Chuen", "avg_psf": 10687, "rent_psf": 28},
-    2: {"name": "太古城", "name_en": "Taikoo Shing", "avg_psf": 16865, "rent_psf": 38},
-    3: {"name": "沙田第一城", "name_en": "Sha Tin First City", "avg_psf": 14692, "rent_psf": 35},
-    4: {"name": "嘉湖山莊", "name_en": "Kingswood Villas", "avg_psf": 8639, "rent_psf": 22},
-    5: {"name": "昇悅居", "name_en": "Harmony Place", "avg_psf": 13200, "rent_psf": 33},
-    6: {"name": "宇晴軒", "name_en": "Casper", "avg_psf": 12800, "rent_psf": 32},
-    7: {"name": "泓景臺", "name_en": "Cosmopolitan", "avg_psf": 12500, "rent_psf": 30},
-    8: {"name": "碧海藍天", "name_en": "Liberté", "avg_psf": 11800, "rent_psf": 29},
+    1: {"name": "美孚新邨", "name_en": "Mei Foo Sun Chuen", "avg_psf": 10777, "rent_psf": 30},
+    2: {"name": "太古城", "name_en": "Taikoo Shing", "avg_psf": 15500, "rent_psf": 42},
+    3: {"name": "沙田第一城", "name_en": "Sha Tin First City", "avg_psf": 11500, "rent_psf": 32},
+    4: {"name": "嘉湖山莊", "name_en": "Kingswood Villas", "avg_psf": 8146, "rent_psf": 22},
+    5: {"name": "昇悅居", "name_en": "Harmony Place", "avg_psf": 16300, "rent_psf": 46},
+    6: {"name": "宇晴軒", "name_en": "Casper", "avg_psf": 17430, "rent_psf": 49},
+    7: {"name": "泓景臺", "name_en": "Cosmopolitan", "avg_psf": 14883, "rent_psf": 42},
+    8: {"name": "碧海藍天", "name_en": "Liberté", "avg_psf": 17158, "rent_psf": 48},
 }
 
 PHASES = {

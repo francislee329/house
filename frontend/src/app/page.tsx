@@ -21,6 +21,9 @@ export default async function Home() {
     );
   }
 
+  const MEMBER_ESTATE_IDS = [5, 6, 7, 8];
+  const displayEstates = estates.filter(e => !MEMBER_ESTATE_IDS.includes(e.id));
+
   return (
     <div className="space-y-8">
       <div className="text-center py-8">
@@ -30,25 +33,25 @@ export default async function Home() {
         <p className="text-zinc-500">荔枝角四小龍 — 找出最筍的單位</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {estates.map((estate) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {displayEstates.map((estate) => (
           <EstateCard key={estate.id} estate={estate} />
         ))}
       </div>
 
       <div className="grid grid-cols-3 gap-4 text-center">
         <div className="p-4 rounded-xl bg-[#13131a] border border-zinc-800">
-          <p className="text-2xl font-bold text-blue-400">{estates.reduce((s, e) => s + (e.transaction_count_30d || 0), 0)}</p>
+          <p className="text-2xl font-bold text-blue-400">{displayEstates.reduce((s, e) => s + (e.transaction_count_30d || 0), 0)}</p>
           <p className="text-xs text-zinc-500 mt-1">30日總成交</p>
         </div>
         <div className="p-4 rounded-xl bg-[#13131a] border border-zinc-800">
           <p className="text-2xl font-bold text-emerald-400">
-            {Math.round(estates.reduce((s, e) => s + e.avg_price_per_sqft, 0) / estates.length).toLocaleString()}
+            {Math.round(displayEstates.reduce((s, e) => s + e.avg_price_per_sqft, 0) / displayEstates.length).toLocaleString()}
           </p>
           <p className="text-xs text-zinc-500 mt-1">平均呎價</p>
         </div>
         <div className="p-4 rounded-xl bg-[#13131a] border border-zinc-800">
-          <p className="text-2xl font-bold text-amber-400">{estates.length}</p>
+          <p className="text-2xl font-bold text-amber-400">{displayEstates.length}</p>
           <p className="text-xs text-zinc-500 mt-1">追蹤屋苑</p>
         </div>
       </div>
