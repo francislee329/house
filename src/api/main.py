@@ -215,6 +215,12 @@ def list_estates(db: Session = Depends(get_db)):
             Transaction.date >= thirty_days_ago,
         ).count()
         d["transaction_count_30d"] = tx_count
+
+        # Calculate price_range from transactions (since listings table may be empty)
+        txns = db.query(Transaction).filter(Transaction.estate_id == e.id).all()
+        prices = [t.price_per_sqft for t in txns if t.price_per_sqft]
+        d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
+
         results.append(d)
     return results
 
@@ -233,7 +239,8 @@ def get_estate(estate_id: int, db: Session = Depends(get_db)):
         all_history = db.query(PriceHistory).filter(PriceHistory.estate_id.in_(member_ids))\
             .order_by(PriceHistory.month).all()
 
-        prices = [l.price_per_sqft for l in all_listings if l.price_per_sqft]
+        # Calculate price_range from transactions (since listings table may be empty)
+        prices = [t.price_per_sqft for t in all_txns if t.price_per_sqft]
         d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
 
         monthly = {}
@@ -253,17 +260,19 @@ def get_estate(estate_id: int, db: Session = Depends(get_db)):
             me = db.query(Estate).filter(Estate.id == mid).first()
             if me:
                 md = _estate_to_dict(me)
-                m_listings = db.query(Listing).filter(Listing.estate_id == mid).all()
-                m_prices = [l.price_per_sqft for l in m_listings if l.price_per_sqft]
+                # Calculate price_range from transactions for each member
+                m_txns = db.query(Transaction).filter(Transaction.estate_id == mid).all()
+                m_prices = [t.price_per_sqft for t in m_txns if t.price_per_sqft]
                 md["price_range"] = {"min": min(m_prices) if m_prices else 0, "max": max(m_prices) if m_prices else 0}
-                md["listing_count"] = len(m_listings)
-                m_txns = db.query(Transaction).filter(Transaction.estate_id == mid).count()
-                md["transaction_count_30d"] = m_txns
+                md["listing_count"] = len(db.query(Listing).filter(Listing.estate_id == mid).all())
+                md["transaction_count_30d"] = len(m_txns)
                 members.append(md)
         d["members"] = members
     else:
         listings = db.query(Listing).filter(Listing.estate_id == estate_id).all()
-        prices = [l.price_per_sqft for l in listings if l.price_per_sqft]
+        # Calculate price_range from transactions (since listings table may be empty)
+        txns = db.query(Transaction).filter(Transaction.estate_id == estate_id).all()
+        prices = [t.price_per_sqft for t in txns if t.price_per_sqft]
         d["price_range"] = {"min": min(prices) if prices else 0, "max": max(prices) if prices else 0}
 
         history = db.query(PriceHistory).filter(PriceHistory.estate_id == estate_id)\
