@@ -1,0 +1,109 @@
+{
+  "agents": {
+    "data": {
+      "description": "Scrapes listings, transactions, estate metadata from Centanet/28Hse",
+      "script": "agents/data_agent.py",
+      "produces": [
+        "data/centanet_listings.csv",
+        "data/centanet_transactions.csv",
+        "data/28hse_listings.csv",
+        "data/price_history.csv",
+        "data/estates_metadata.json"
+      ],
+      "depends_on": [],
+      "on_change": "rebuild_db"
+    },
+    "backend": {
+      "description": "Seeds DB, runs scoring model, serves FastAPI endpoints",
+      "script": "agents/backend_agent.py",
+      "produces": [
+        "data/hk_flat_finder.db",
+        "src/api/main.py"
+      ],
+      "depends_on": [
+        "data"
+      ],
+      "on_change": "notify_frontend"
+    },
+    "frontend": {
+      "description": "Regenerates API types, updates components if schema changed",
+      "script": "agents/frontend_agent.py",
+      "produces": [
+        "frontend/src/lib/api.ts",
+        "frontend/src/components/"
+      ],
+      "depends_on": [
+        "backend"
+      ],
+      "on_change": null
+    }
+  },
+  "changelog": [
+    {
+      "timestamp": "2026-08-28T09:54:44.518161",
+      "agent": "data",
+      "changed_files": [
+        "28hse_listings.csv",
+        "centanet_listings.csv",
+        "centanet_transactions.csv",
+        "price_history.csv"
+      ],
+      "summary": "Scraped 4 changed files"
+    },
+    {
+      "timestamp": "2026-08-28T09:54:58.714335",
+      "agent": "backend",
+      "db_exists": true,
+      "api_tests": {
+        "/api/estates": "OK",
+        "/api/listings?limit=3": "OK",
+        "/api/ranking?limit=3": "OK",
+        "/api/transactions?estate_id=1&limit=3": "OK",
+        "/api/chart/1?period=1y": "OK"
+      },
+      "schema_extracted": true,
+      "summary": "DB seeded, 5/5 API tests passed"
+    },
+    {
+      "timestamp": "2026-08-28T09:54:58.866971",
+      "agent": "frontend",
+      "api_changes": [
+        "schema_new"
+      ],
+      "types_updated": true,
+      "summary": "Types updated, 1 API changes detected"
+    },
+    {
+      "timestamp": "2026-08-28T09:56:15.405507",
+      "agent": "data",
+      "changed_files": [
+        "28hse_listings.csv",
+        "centanet_listings.csv",
+        "centanet_transactions.csv",
+        "price_history.csv"
+      ],
+      "summary": "Scraped 4 changed files"
+    },
+    {
+      "timestamp": "2026-08-28T09:56:29.919974",
+      "agent": "backend",
+      "db_exists": true,
+      "api_tests": {
+        "/api/estates": "OK",
+        "/api/listings?limit=3": "OK",
+        "/api/ranking?limit=3": "OK",
+        "/api/transactions?estate_id=1&limit=3": "OK",
+        "/api/chart/1?period=1y": "OK"
+      },
+      "schema_extracted": true,
+      "summary": "DB seeded, 5/5 API tests passed"
+    },
+    {
+      "timestamp": "2026-08-28T09:56:30.046580",
+      "agent": "frontend",
+      "api_changes": [],
+      "types_updated": false,
+      "summary": "Types updated, 0 API changes detected"
+    }
+  ]
+}

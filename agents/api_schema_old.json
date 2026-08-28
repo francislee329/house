@@ -1,0 +1,158 @@
+{
+  "estates": [
+    {
+      "id": 1,
+      "name": "美孚新邨",
+      "name_en": "Mei Foo Sun Chuen",
+      "district": "Lai Chi Kok",
+      "region": "Kowloon",
+      "nearest_mtr": "Mei Foo",
+      "mtr_walk_minutes": 2,
+      "total_units": 9980,
+      "building_age_years": 53,
+      "developer": "New World / Sino Land",
+      "school_net": "62",
+      "avg_price_per_sqft": 10687.0,
+      "facilities": [
+        "swimming_pool",
+        "gym",
+        "playground",
+        "shopping_centre",
+        "tennis_court"
+      ],
+      "unit_layouts": [
+        "1房",
+        "2房",
+        "3房"
+      ],
+      "phases": 8,
+      "transaction_count_30d": 180
+    },
+    {
+      "id": 2,
+      "name": "太古城",
+      "name_en": "Taikoo Shing",
+      "district": "Taikoo",
+      "region": "Hong Kong Island",
+      "nearest_mtr": "Taikoo",
+      "mtr_walk_minutes": 1,
+      "total_units": 12698,
+      "building_age_years": 47,
+      "developer": "Swire Properties",
+      "school_net": "14",
+      "avg_price_per_sqft": 16865.0,
+      "facilities": [
+        "swimming_pool",
+        "gym",
+        "playground",
+        "shopping_centre",
+        "garden"
+      ],
+      "unit_layouts": [
+        "2房",
+        "3房",
+        "4房"
+      ],
+      "phases": 12,
+      "transaction_count_30d": 240
+    },
+    {
+      "id": 3,
+      "name": "沙田第一城",
+      "name_en": "Sha Tin First City",
+      "district": "Sha Tin",
+      "region": "New Territories",
+      "nearest_mtr": "City One",
+      "mtr_walk_minutes": 3,
+      "total_units": 10642,
+      "building_age_years": 41,
+      "developer": "Cheung Kong Holdings",
+      "school_net": "91",
+      "avg_price_per_sqft": 14692.0,
+      "facilities": [
+        "swimming_pool",
+        "gym",
+        "playground",
+        "shopping_centre",
+        "sports_centre"
+      ],
+      "unit_layouts": [
+        "2房",
+        "3房"
+      ],
+      "phases": 5,
+      "transaction_count_30d": 150
+    },
+    {
+      "id": 4,
+      "name": "嘉湖山莊",
+      "name_en": "Kingswood Villas",
+      "district": "Tin Shui Wai",
+      "region": "New Territories",
+      "nearest_mtr": "Tin Shui Wai",
+      "mtr_walk_minutes": 8,
+      "total_units": 15844,
+      "building_age_years": 30,
+      "developer": "Henderson Land",
+      "school_net": "72",
+      "avg_price_per_sqft": 8639.0,
+      "facilities": [
+        "swimming_pool",
+        "gym",
+        "playground",
+        "garden",
+        "tennis_court"
+      ],
+      "unit_layouts": [
+        "2房",
+        "3房"
+      ],
+      "phases": 7,
+      "transaction_count_30d": 210
+    }
+  ],
+  "listings_sample": {
+    "total": 1530,
+    "listings": [
+      {
+        "id": 499,
+        "estate_id": 4,
+        "phase": "第2期",
+        "block": "F座",
+        "floor": "高層",
+        "flat": "G",
+        "rooms": "3房",
+        "area_sqft": 400,
+        "price": 2259200,
+        "price_per_sqft": 5648.0,
+        "direction": "西",
+        "source": "28hse",
+        "listing_url": "https://www.28hse.com/buy/嘉湖山莊-10",
+        "listed_date": "2026-08-28",
+        "value_score": 71.6,
+        "estate_name": "嘉湖山莊"
+      }
+    ]
+  },
+  "ranking_sample": {
+    "ranked": [
+      {
+        "listing_id": 499,
+        "estate_name": "嘉湖山莊",
+        "address": "嘉湖山莊 第2期 F座 高層 G室",
+        "rooms": "3房",
+        "area_sqft": 400,
+        "price": 2259200,
+        "price_per_sqft": 5648.0,
+        "value_score": 71.6,
+        "score_breakdown": {
+          "price_vs_historical": 84.6,
+          "price_vs_peers": 100,
+          "rental_yield": 23.4,
+          "location": 60.0,
+          "building_condition": 75.0
+        }
+      }
+    ]
+  }
+}

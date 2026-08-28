@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+data/*.db
+frontend/node_modules/
+frontend/.next/
+*.log
+.DS_Store
