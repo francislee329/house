@@ -3,7 +3,6 @@ import os
 import re
 import httpx
 from bs4 import BeautifulSoup
-from datetime import datetime, timedelta
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
 
@@ -155,39 +154,13 @@ def scrape() -> list[dict]:
             writer.writerows(all_txns)
         print(f"[28hse] Saved {len(all_txns)} transactions to {out_path}")
     else:
-        print("[28hse] No transactions scraped, generating sample data...")
-        all_txns = _gen_fallback()
+        print("[28hse] No transactions scraped")
         with open(out_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=all_txns[0].keys())
+            writer = csv.DictWriter(f, fieldnames=["estate_id", "date", "phase", "block", "floor",
+                                                    "flat", "rooms", "area_sqft", "price",
+                                                    "price_per_sqft", "source"])
             writer.writeheader()
-            writer.writerows(all_txns)
-        print(f"[28hse] Saved {len(all_txns)} fallback transactions to {out_path}")
     return all_txns
-
-
-def _gen_fallback():
-    import random
-    txns = []
-    for eid, e in ESTATES.items():
-        for i in range(20):
-            area = random.choice([350, 400, 450, 494, 501, 530, 550, 580, 600, 650, 700])
-            psf = e["avg_psf"] + random.randint(-2000, 2000)
-            psf = max(3000, psf)
-            days_ago = random.randint(0, 365)
-            txns.append({
-                "estate_id": eid,
-                "date": (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d"),
-                "phase": "",
-                "block": f"{random.choice(range(1, 9))}座",
-                "floor": random.choice(["低層", "中層", "高層"]),
-                "flat": random.choice(["A", "B", "C", "D", "E", "F", "G", "H"]),
-                "rooms": random.choice(["1房", "2房", "3房"]),
-                "area_sqft": area,
-                "price": psf * area,
-                "price_per_sqft": psf,
-                "source": "28hse",
-            })
-    return txns
 
 
 if __name__ == "__main__":

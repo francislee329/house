@@ -67,14 +67,16 @@ export interface Transaction {
   id: number;
   estate_id: number;
   date: string;
-  price: number;
-  area_sqft: number;
-  price_per_sqft: number;
-  floor: string;
+  phase: string;
   block: string;
+  floor: string;
   flat: string;
   rooms: string;
+  area_sqft: number;
+  price: number;
+  price_per_sqft: number;
   source: string;
+  estate_name?: string;
 }
 
 export interface CompareItem {

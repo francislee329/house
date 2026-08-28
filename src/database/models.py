@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, Text, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, Text, Boolean, JSON, ForeignKey
 from sqlalchemy.orm import relationship
 from .db import Base
 
@@ -18,9 +18,14 @@ class Estate(Base):
     developer = Column(String)
     school_net = Column(String)
     avg_price_per_sqft = Column(Float)
+    rent_per_sqft = Column(Float)
     facilities = Column(Text)  # JSON array
     unit_layouts = Column(Text)  # JSON array
     phases = Column(Integer)
+    lat = Column(Float)
+    lng = Column(Float)
+    is_group = Column(Boolean, default=False)
+    member_estates = Column(JSON)  # list of estate IDs
 
     listings = relationship("Listing", back_populates="estate")
     transactions = relationship("Transaction", back_populates="estate")

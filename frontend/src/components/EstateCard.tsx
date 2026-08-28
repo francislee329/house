@@ -14,6 +14,10 @@ export default function EstateCard({ estate }: Props) {
     2: { color: "from-purple-600 to-purple-800", emoji: "🌇" },
     3: { color: "from-emerald-600 to-emerald-800", emoji: "🌳" },
     4: { color: "from-amber-600 to-amber-800", emoji: "🏔️" },
+    5: { color: "from-cyan-600 to-cyan-800", emoji: "🏢" },
+    6: { color: "from-teal-600 to-teal-800", emoji: "🏬" },
+    7: { color: "from-indigo-600 to-indigo-800", emoji: "🏨" },
+    8: { color: "from-sky-600 to-sky-800", emoji: "🌊" },
     100: { color: "from-red-600 to-orange-600", emoji: "🐉" },
   };
   const m = meta[estate.id] || { color: "from-zinc-600 to-zinc-800", emoji: "🏠" };
