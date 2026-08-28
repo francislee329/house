@@ -104,7 +104,9 @@ function GroupEstateDetail({ estate, members, transactions, roomData }: { estate
                   <td className="py-3 px-3 text-right">{m.listing_count || 0}</td>
                   <td className="py-3 px-3 text-right">{m.transaction_count_30d || 0}</td>
                   <td className="py-3 px-3 text-sm">{m.nearest_mtr} ({m.mtr_walk_minutes}分鐘)</td>
-                  <td className="py-3 px-3 text-sm text-zinc-400">{m.developer}</td>
+                  <td className="py-3 px-3 text-sm">
+                    <DeveloperBadge developer={m.developer} info={m.developer_info} />
+                  </td>
                 </tr>
               ))}
             </tbody>
