@@ -143,7 +143,7 @@ export const api = {
   getRanking: (params?: Record<string, string | number | undefined>) =>
     fetchAPI<{ ranked: RankedListing[] }>("/ranking", params),
   getTransactions: (estateId: number, limit = 50) =>
-    fetchAPI<{ transactions: Transaction[] }>("/transactions", { estate_id: estateId, limit }),
+    fetchAPI<{ transactions: Transaction[] }>("/transactions", { estate_id: estateId, limit: limit.toString() }),
   getChartData: (estateId: number, period = "3y") =>
     fetchAPI<{ estate_name: string; period: string; data: PriceHistoryPoint[] }>(`/chart/${estateId}`, { period }),
   compare: (ids: number[]) =>

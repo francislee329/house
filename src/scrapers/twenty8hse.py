@@ -17,6 +17,9 @@ ESTATES = {
     8: {"name": "碧海藍天", "hse_id": 2380, "avg_psf": 17158},
 }
 
+FULL_MAX_PAGES = 65
+UPDATE_MAX_PAGES = 5
+
 
 def _parse_price(text: str) -> int | None:
     text = text.strip().replace(",", "")
@@ -58,32 +61,14 @@ def _parse_floor(text: str) -> str:
     return ""
 
 
-def _scrape_estate_transactions(estate_id: int, hse_id: int, name: str) -> list[dict]:
-    url = f"https://www.28hse.com/estate/detail/{name}-{hse_id}/transaction"
+def _parse_page(soup: BeautifulSoup, estate_id: int) -> list[dict]:
     txns = []
-
-    try:
-        client = httpx.Client(timeout=15, follow_redirects=True, verify=False)
-        resp = client.get(url, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
-        })
-        if resp.status_code != 200:
-            print(f"[28hse] HTTP {resp.status_code} for {name}")
-            return txns
-    except Exception as e:
-        print(f"[28hse] Fetch failed for {name}: {e}")
-        return txns
-
-    soup = BeautifulSoup(resp.text, "html.parser")
-
     for table in soup.find_all("table"):
         headers = [th.get_text(strip=True) for th in table.find_all("th")]
         if "成交價錢" not in headers and "成交價" not in " ".join(headers):
             continue
 
-        rows = table.find_all("tr")
-        for row in rows:
+        for row in table.find_all("tr"):
             cols = row.find_all("td")
             if len(cols) < 3:
                 continue
@@ -134,15 +119,46 @@ def _scrape_estate_transactions(estate_id: int, hse_id: int, name: str) -> list[
                 "price_per_sqft": psf if psf > 0 else round(price / area),
                 "source": "28hse",
             })
-
-    print(f"[28hse] Scraped {len(txns)} transactions from {name}")
+        break
     return txns
 
 
-def scrape() -> list[dict]:
+def _scrape_estate(estate_id: int, hse_id: int, name: str, max_pages: int) -> list[dict]:
+    base_url = f"https://www.28hse.com/estate/detail/{name}-{hse_id}/transaction"
+    all_txns = []
+    client = httpx.Client(timeout=15, follow_redirects=True, verify=False)
+    hdrs = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+    }
+
+    for page in range(1, max_pages + 1):
+        url = base_url if page == 1 else f"{base_url}/page-{page}"
+        try:
+            resp = client.get(url, headers=hdrs)
+            if resp.status_code != 200:
+                break
+        except Exception as e:
+            print(f"[28hse] Error page {page} for {name}: {e}")
+            break
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        txns = _parse_page(soup, estate_id)
+        all_txns.extend(txns)
+
+        has_next = any(f"page-{page + 1}" in a["href"] for a in soup.find_all("a", href=True))
+        if not has_next:
+            break
+
+    print(f"[28hse] Scraped {len(all_txns)} transactions from {name} ({page} pages)")
+    return all_txns
+
+
+def scrape(full: bool = False) -> list[dict]:
+    max_pages = FULL_MAX_PAGES if full else UPDATE_MAX_PAGES
     all_txns = []
     for eid, e in ESTATES.items():
-        txns = _scrape_estate_transactions(eid, e["hse_id"], e["name"])
+        txns = _scrape_estate(eid, e["hse_id"], e["name"], max_pages)
         all_txns.extend(txns)
 
     out_path = os.path.join(DATA_DIR, "28hse_listings.csv")
@@ -155,13 +171,10 @@ def scrape() -> list[dict]:
         print(f"[28hse] Saved {len(all_txns)} transactions to {out_path}")
     else:
         print("[28hse] No transactions scraped")
-        with open(out_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=["estate_id", "date", "phase", "block", "floor",
-                                                    "flat", "rooms", "area_sqft", "price",
-                                                    "price_per_sqft", "source"])
-            writer.writeheader()
     return all_txns
 
 
 if __name__ == "__main__":
-    scrape()
+    import sys
+    full = "--full" in sys.argv
+    scrape(full=full)

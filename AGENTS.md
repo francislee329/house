@@ -12,8 +12,11 @@ HK Flat Value Finder — a tool to find the best value flats in Hong Kong by com
 
 ### Backend
 ```bash
-# Seed database
+# Full seed (first time) — scrapes all ~5000 transactions from 28Hse
 uv run python -m src.scrapers.seed_data
+
+# Update (daily/weekly) — scrapes recent 5 pages, skips duplicates
+uv run python -m src.scrapers.seed_data --update
 
 # Start API server
 uv run uvicorn src.api.main:app --host 0.0.0.0 --port 8000
@@ -115,7 +118,7 @@ uv run python agents/coordinator.py --status
 Manifest tracks timestamps, changed files, and API diffs between runs.
 
 ## Notes
-- Scrapers fall back to generated sample data if live scraping fails
+- Scrapers fetch real transaction data from 28Hse (~5000 records, 5 years)
 - Database is SQLite at `data/hk_flat_finder.db`
 - Frontend connects to API at `http://localhost:8000`
 - Use `uv run` for all Python commands

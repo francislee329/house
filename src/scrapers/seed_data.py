@@ -2,6 +2,7 @@ import json
 import os
 import sys
 import csv
+from datetime import datetime
 from collections import defaultdict
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
@@ -64,33 +65,56 @@ def seed_estates(db):
                 member_estates=e.get("member_estates", []),
             ))
     db.commit()
-    print(f"[seed] Inserted {len(estates)} estates")
+    print(f"[seed] Upserted {len(estates)} estates")
 
 
-def seed_csv_data(db, csv_path: str, model_class, field_map: dict):
+def seed_transactions_from_csv(db, csv_path: str) -> int:
     if not os.path.exists(csv_path):
         print(f"[seed] {csv_path} not found, skipping")
         return 0
+
+    existing = set()
+    for t in db.query(Transaction.estate_id, Transaction.date, Transaction.block, Transaction.flat).all():
+        existing.add((t.estate_id, t.date, t.block, t.flat))
+
     count = 0
     with open(csv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            data = {}
-            for csv_col, db_col in field_map.items():
-                val = row.get(csv_col, "")
-                if db_col in ("price", "price_per_sqft", "area_sqft", "volume", "estate_id",
-                              "mtr_walk_minutes", "total_units", "building_age_years", "phases"):
-                    try:
-                        val = int(float(val)) if db_col in ("price", "area_sqft", "volume",
-                                                              "estate_id", "total_units",
-                                                              "building_age_years", "phases") else float(val) if val else 0
-                    except (ValueError, TypeError):
-                        val = 0
-                data[db_col] = val
-            db.add(model_class(**data))
-            count += 1
+            try:
+                estate_id = int(float(row.get("estate_id", 0)))
+                date = row.get("date", "")
+                block = row.get("block", "")
+                flat = row.get("flat", "")
+
+                if (estate_id, date, block, flat) in existing:
+                    continue
+
+                price = int(float(row.get("price", 0)))
+                area = int(float(row.get("area_sqft", 0)))
+                psf = float(row.get("price_per_sqft", 0))
+                if psf == 0 and price > 0 and area > 0:
+                    psf = round(price / area)
+
+                db.add(Transaction(
+                    estate_id=estate_id,
+                    date=date,
+                    phase=row.get("phase", ""),
+                    block=block,
+                    floor=row.get("floor", ""),
+                    flat=flat,
+                    rooms=row.get("rooms", ""),
+                    area_sqft=area,
+                    price=price,
+                    price_per_sqft=psf,
+                    source=row.get("source", "28hse"),
+                ))
+                existing.add((estate_id, date, block, flat))
+                count += 1
+            except (ValueError, TypeError):
+                continue
     db.commit()
-    print(f"[seed] Inserted {count} records into {model_class.__tablename__}")
+    print(f"[seed] Inserted {count} new transactions (skipped {sum(1 for _ in open(csv_path)) - count - 1} duplicates)")
     return count
 
 
@@ -102,63 +126,45 @@ def generate_price_history_from_transactions(db):
             month = t.date[:7]
             monthly[t.estate_id][month].append(t.price_per_sqft)
 
+    db.query(PriceHistory).delete()
     records = []
     for estate_id, months in monthly.items():
         for month, prices in sorted(months.items()):
-            records.append({
-                "estate_id": estate_id,
-                "month": month,
-                "avg_price_per_sqft": round(sum(prices) / len(prices)),
-                "volume": len(prices),
-            })
-
-    out_path = os.path.join(DATA_DIR, "price_history.csv")
-    os.makedirs(DATA_DIR, exist_ok=True)
-    if records:
-        with open(out_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=["estate_id", "month", "avg_price_per_sqft", "volume"])
-            writer.writeheader()
-            writer.writerows(records)
-    print(f"[seed] Generated {len(records)} price history records from transactions")
+            records.append(PriceHistory(
+                estate_id=estate_id,
+                month=month,
+                avg_price_per_sqft=round(sum(prices) / len(prices)),
+                volume=len(prices),
+            ))
+            db.add(records[-1])
+    db.commit()
+    print(f"[seed] Regenerated {len(records)} price history records")
     return records
 
 
 def main():
-    print("=== HK Flat Value Finder: Seed Data ===")
+    update_mode = "--update" in sys.argv
+
+    print(f"=== HK Flat Value Finder: {'Update' if update_mode else 'Full Seed'} ===")
     init_db()
     db = SessionLocal()
 
     try:
-        # 1. Seed estates with metadata
         seed_estates(db)
 
-        # 2. Run 28Hse scraper (real transaction data)
-        scrape_28hse()
+        if update_mode:
+            scrape_28hse(full=False)
+            hse_path = os.path.join(DATA_DIR, "28hse_listings.csv")
+            seed_transactions_from_csv(db, hse_path)
+        else:
+            scrape_28hse(full=True)
+            hse_path = os.path.join(DATA_DIR, "28hse_listings.csv")
+            seed_transactions_from_csv(db, hse_path)
 
-        # 3. Load 28Hse transactions into transactions table
-        txn_fields = {
-            "estate_id": "estate_id", "date": "date", "phase": "phase",
-            "block": "block", "floor": "floor", "flat": "flat", "rooms": "rooms",
-            "area_sqft": "area_sqft", "price": "price", "price_per_sqft": "price_per_sqft",
-            "source": "source",
-        }
-        hse_path = os.path.join(DATA_DIR, "28hse_listings.csv")
-        seed_csv_data(db, hse_path, Transaction, txn_fields)
-
-        # 4. Generate price_history from transactions
         generate_price_history_from_transactions(db)
 
-        # 5. Load price_history into DB
-        history_fields = {
-            "estate_id": "estate_id", "month": "month",
-            "avg_price_per_sqft": "avg_price_per_sqft", "volume": "volume",
-        }
-        history_path = os.path.join(DATA_DIR, "price_history.csv")
-        seed_csv_data(db, history_path, PriceHistory, history_fields)
-
-        print("\n=== Seed complete! ===")
+        print(f"\n=== Done! ===")
         print(f"Estates: {db.query(Estate).count()}")
-        print(f"Listings: {db.query(Listing).count()}")
         print(f"Transactions: {db.query(Transaction).count()}")
         print(f"Price history: {db.query(PriceHistory).count()}")
 

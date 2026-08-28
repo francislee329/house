@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { api, Estate, Transaction, RoomGroup } from "@/lib/api";
-import PriceChart from "@/components/PriceChart";
-import RoomTrendChart from "@/components/RoomTrendChart";
+import EstateTrendChart from "@/components/EstateTrendChart";
 import { formatPrice, formatPricePerSqft } from "@/lib/utils";
 
 export default function EstateDetailPage() {
@@ -25,12 +24,12 @@ export default function EstateDetailPage() {
         if (e.is_group && e.members) {
           const allTxns: Transaction[] = [];
           for (const member of e.members) {
-            const t = await api.getTransactions(member.id);
+            const t = await api.getTransactions(member.id, 200);
             allTxns.push(...t.transactions.map(tx => ({ ...tx, estate_name: member.name })));
           }
           setTransactions(allTxns.sort((a, b) => b.date.localeCompare(a.date)));
         } else {
-          const t = await api.getTransactions(id);
+          const t = await api.getTransactions(id, 200);
           setTransactions(t.transactions);
         }
 
@@ -56,12 +55,6 @@ export default function EstateDetailPage() {
 }
 
 function GroupEstateDetail({ estate, members, transactions, roomData }: { estate: Estate; members: Estate[]; transactions: Transaction[]; roomData: Record<string, RoomGroup> | null }) {
-  const facilities: Record<string, string> = {
-    swimming_pool: "泳池", gym: "健身室", playground: "遊樂場",
-    shopping_centre: "商場", tennis_court: "網球場", garden: "花園",
-    sports_centre: "運動中心",
-  };
-
   return (
     <div className="space-y-8">
       <div>
@@ -119,16 +112,12 @@ function GroupEstateDetail({ estate, members, transactions, roomData }: { estate
       {estate.price_history && estate.price_history.length > 0 && (
         <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
           <h2 className="font-bold mb-4">歷史呎價走勢（合併）</h2>
-          <PriceChart data={estate.price_history} height={350} />
+          <EstateTrendChart data={estate.price_history} height={350} />
         </div>
       )}
 
-      {roomData && Object.keys(roomData).length > 0 && (
-        <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
-          <h2 className="font-bold mb-1">各間隔走勢</h2>
-          <p className="text-sm text-zinc-500 mb-4">按間隔分類 — 租金回報 vs 按揭利率</p>
-          <RoomTrendChart rooms={roomData} />
-        </div>
+      {roomData && (
+        <RentalYieldCard roomData={roomData} />
       )}
 
       <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
@@ -196,7 +185,7 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
         <div className="lg:col-span-2 p-5 rounded-xl bg-[#13131a] border border-zinc-800">
           <h2 className="font-bold mb-4">歷史呎價走勢</h2>
           {estate.price_history && estate.price_history.length > 0 ? (
-            <PriceChart data={estate.price_history} height={350} />
+            <EstateTrendChart data={estate.price_history} height={350} />
           ) : (
             <p className="text-zinc-500 text-sm">無歷史數據</p>
           )}
@@ -237,12 +226,8 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
         </div>
       </div>
 
-      {roomData && Object.keys(roomData).length > 0 && (
-        <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
-          <h2 className="font-bold mb-1">各間隔走勢</h2>
-          <p className="text-sm text-zinc-500 mb-4">按間隔分類 — 租金回報 vs 按揭利率</p>
-          <RoomTrendChart rooms={roomData} />
-        </div>
+      {roomData && (
+        <RentalYieldCard roomData={roomData} />
       )}
 
       <div className="p-5 rounded-xl bg-[#13131a] border border-zinc-800">
@@ -282,11 +267,55 @@ function SingleEstateDetail({ estate, transactions, roomData }: { estate: Estate
   );
 }
 
+function RentalYieldCard({ roomData }: { roomData: Record<string, RoomGroup> }) {
+  const MORTGAGE_RATE = 3.5;
+
+  const entries = Object.entries(roomData).filter(([, g]) => g.count > 0);
+  if (entries.length === 0) return null;
+
+  const avgRatio = entries.reduce((sum, [, g]) => sum + g.yield_to_mortgage_ratio, 0) / entries.length;
+  const isGood = avgRatio >= 1;
+
+  return (
+    <div className="p-5 rounded-xl border" style={{
+      borderColor: isGood ? "#10b981" : "#ef4444",
+      backgroundColor: isGood ? "rgba(16,185,129,0.05)" : "rgba(239,68,68,0.05)",
+    }}>
+      <h2 className="font-bold mb-3">投資回報分析</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {entries.map(([roomType, group]) => {
+          const ratio = group.yield_to_mortgage_ratio;
+          const good = ratio >= 1;
+          return (
+            <div key={roomType} className="rounded-lg border p-3" style={{
+              borderColor: good ? "#10b981" : "#ef4444",
+              backgroundColor: good ? "rgba(16,185,129,0.08)" : "rgba(239,68,68,0.08)",
+            }}>
+              <p className="text-sm text-zinc-400">{roomType}</p>
+              <p className="text-lg font-bold" style={{ color: good ? "#10b981" : "#ef4444" }}>
+                {ratio}x
+              </p>
+              <div className="mt-1 text-xs text-zinc-500 space-y-0.5">
+                <p>回報: <span className="text-zinc-300">{group.rental_yield_pct}%</span></p>
+                <p>按揭: <span className="text-zinc-300">{MORTGAGE_RATE}%</span></p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p className="mt-3 text-xs text-zinc-500">
+        平均回報/利率比: <span className="font-bold" style={{ color: isGood ? "#10b981" : "#ef4444" }}>{avgRatio.toFixed(2)}x</span>
+        {isGood ? " — 回報高於按揭，值得考慮" : " — 回報低於按揭，投資需謹慎"}
+      </p>
+    </div>
+  );
+}
+
 function StatCard({ label, value, color }: { label: string; value: string; color: string }) {
   return (
     <div className="p-4 rounded-xl bg-[#13131a] border border-zinc-800">
       <p className="text-xs text-zinc-500">{label}</p>
-      <p className={`text-lg font-bold ${color}`}>{value}</p>
+      <p className={`text-lg font-bold mt-1 ${color}`}>{value}</p>
     </div>
   );
 }
@@ -295,7 +324,7 @@ function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between">
       <span className="text-zinc-500">{label}</span>
-      <span className="text-right">{value}</span>
+      <span className="font-medium">{value}</span>
     </div>
   );
 }
